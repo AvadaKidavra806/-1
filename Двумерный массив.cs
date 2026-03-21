@@ -14,8 +14,8 @@ namespace Dvumerny_massiv
             {
                 if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
                     Console.Write("Ошибка! Введите номер задания еще раз ");
-                else if (NomerZadaniy <= 0 || NomerZadaniy > 20)
-                    Console.Write("В дз всего 20 заданий, Введите номер задания еще раз ");
+                else if (NomerZadaniy <= 0 || NomerZadaniy > 21)
+                    Console.Write("В дз всего 21 заданий, Введите номер задания еще раз ");
                 else
                     NomerZadaniyOut = false;
 
@@ -1464,7 +1464,7 @@ namespace Dvumerny_massiv
                 Console.WriteLine($"а) элемент расположенный в правом нижнем углу массива ({massiv[kolvostrok - 1, kolvostolb - 1]}) {s}, чем в левом нижнем ({massiv[kolvostrok - 1, 0]})");
                 Console.WriteLine($"б) элемент расположенный в правом верхнем углу массива ({massiv[0, kolvostolb - 1]}) {s1}, чем в левом нижнем ({massiv[kolvostrok - 1, 0]})");
             }
-            void n18 ()
+            void n18()
 
             {
                 Console.Write("Введите количество строк в массиве: ");
@@ -1514,7 +1514,199 @@ namespace Dvumerny_massiv
                 Console.WriteLine($"а) элемент расположенный в левом верхнем углу массива ({massiv[0, 0]}) {s}, чем в правом верхнем ({massiv[0, kolvostolb - 1]})");
                 Console.WriteLine($"б) элемент расположенный в правом нижнем углу массива ({massiv[kolvostrok - 1, kolvostolb - 1]}) {s1}, чем в левом верхнем ({massiv[0, 0]})");
             }
-            void n19 () 
+            void n19()
+            {
+                Console.Write("Введите количество строк в массиве: ");
+                int kolvostrok = 0; bool outkolvostrok = true;
+                while (outkolvostrok)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvostrok))
+                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                    else if (kolvostrok <= 0)
+                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                    else
+                        outkolvostrok = false;
+                }
+                Console.Write("Введите количество столбцов в массиве: ");
+                int kolvostolb = 0; bool outkolvostolb = true;
+                while (outkolvostolb)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvostolb))
+                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                    else if (kolvostolb <= 0)
+                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                    else
+                        outkolvostolb = false;
+                }
+                int[,] nums = new int[kolvostrok, kolvostolb];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < kolvostrok; i++)
+                {
+                    for (int j = 0; j < kolvostolb; j++)
+                    {
+                        nums[i, j] = rnd.Next(-100, 100);
+                        Console.Write(nums[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //===============================
+                {
+                    int t = 0; int x = 0;
+                    {
+                        Console.Write("Введите номер строки элемента: ");
+                        bool outt = true;
+                        while (outt)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out t))
+                                Console.Write("Ошибка! Введите номер строки еще раз ");
+                            else if (t <= 0 || t > kolvostrok)
+                                Console.Write($"Номер строки не может быть неположительным и больше кол-ва  строк в массиве ({kolvostrok})\nВведите номер строки еще раз ");
+                            else
+                                outt = false;
+                        }
+                        Console.Write("Введите номер столбца элемента: ");
+                        bool outx = true;
+                        while (outx)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out x))
+                                Console.Write("Ошибка! Введите номер столбца еще раз ");
+                            else if (x <= 0 || x > kolvostolb)
+                                Console.Write($"Номер столбца не может быть неположительным и больше кол-ва  столбов в массиве ({kolvostolb})\nВведите номер столбца еще раз ");
+                            else
+                                outx = false;
+                        }
+                    }
+                    if (Math.Abs(nums[0, kolvostolb - 1]) > Math.Abs(nums[t - 1, x - 1]))
+                        Console.WriteLine($"a) абсолютная величина элемента, расположенного в верхнем правом углу ({nums[0, kolvostolb - 1]}) больше, чем  абсолютная величина элемента, выбранного пользователем ({nums[t - 1, x - 1]})");
+                    else if (Math.Abs(nums[0, kolvostolb - 1]) < Math.Abs(nums[t - 1, x - 1]))
+                        Console.WriteLine($"a) абсолютная величина элемента, расположенного в верхнем правом углу ({nums[0, kolvostolb - 1]}) меньше, чем  абсолютная величина элемента, выбранного пользователем ({nums[t - 1, x - 1]})");
+                    else
+                        Console.WriteLine($"a) абсолютная величина элемента, расположенного в верхнем правом углу ({nums[0, kolvostolb - 1]}) равна абсолютной величине элемента, выбранного пользователем ({nums[t - 1, x - 1]})");
+                }
+                //================================
+                {
+                    int t = 0; int t1 = 0; int x = 0; int x1 = 0;
+                    {
+                        Console.Write("Введите номер строки 1 элемента: ");
+                        bool outt = true;
+                        while (outt)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out t))
+                                Console.Write("Ошибка! Введите номер строки еще раз ");
+                            else if (t <= 0 || t > kolvostrok)
+                                Console.Write($"Номер строки не может быть неположительным и больше кол-ва  строк в массиве ({kolvostrok})\nВведите номер строки еще раз ");
+                            else
+                                outt = false;
+                        }
+                        Console.Write("Введите номер столбца 1 элемента: ");
+                        bool outx = true;
+                        while (outx)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out x))
+                                Console.Write("Ошибка! Введите номер столбца еще раз ");
+                            else if (x <= 0 || x > kolvostolb)
+                                Console.Write($"Номер столбца не может быть неположительным и больше кол-ва  столбов в массиве ({kolvostolb})\nВведите номер столбца еще раз ");
+                            else
+                                outx = false;
+                        }
+                    }
+                    //================
+                    {
+                        Console.Write("Введите номер строки 2 элемента: ");
+                        bool outt1 = true;
+                        while (outt1)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out t1))
+                                Console.Write("Ошибка! Введите номер строки еще раз ");
+                            else if (t1 <= 0 || t1 > kolvostrok)
+                                Console.Write($"Номер строки не может быть неположительным и больше кол-ва  строк в массиве ({kolvostrok})\nВведите номер строки еще раз ");
+                            else
+                                outt1 = false;
+                        }
+                        Console.Write("Введите номер столбца 2 элемента: ");
+                        bool outx1 = true;
+                        while (outx1)
+                        {
+                            if (!int.TryParse(Console.ReadLine(), out x1))
+                                Console.Write("Ошибка! Введите номер столбца еще раз ");
+                            else if (x1 <= 0 || x1 > kolvostolb)
+                                Console.Write($"Номер столбца не может быть неположительным и больше кол-ва  столбов в массиве ({kolvostolb})\nВведите номер столбца еще раз ");
+                            else
+                                outx1 = false;
+                        }
+                    }
+                    if (Math.Abs(nums[t - 1, x - 1]) > Math.Abs(nums[t1 - 1, x1 - 1]))
+                        Console.WriteLine($"б) абсолютная величина 1 элемента ({nums[t - 1, x - 1]}) больше, чем  абсолютная величина 2 элемента ({nums[t1 - 1, x1 - 1]})");
+                    else if (Math.Abs(nums[0, kolvostolb - 1]) < Math.Abs(nums[t - 1, x - 1]))
+                        Console.WriteLine($"б) абсолютная величина 1 элемента ({nums[t - 1, x - 1]}) меньше, чем  абсолютная величина 2 элемента ({nums[t1 - 1, x1 - 1]})");
+                    else
+                        Console.WriteLine($"б) абсолютная величина 1 элемента ({nums[t - 1, x - 1]}) равна  абсолютной величине 2 элемента ({nums[t1 - 1, x1 - 1]})");
+                }
+            }
+            void n20() 
+            {
+                Console.Write("Введите количество строк в массиве: ");
+                int kolvostrok = 0; bool outkolvostrok = true;
+                while (outkolvostrok)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvostrok))
+                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                    else if (kolvostrok <= 0)
+                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                    else
+                        outkolvostrok = false;
+                }
+                Console.Write("Введите количество столбцов в массиве: ");
+                int kolvostolb = 0; bool outkolvostolb = true;
+                while (outkolvostolb)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvostolb))
+                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                    else if (kolvostolb <= 0)
+                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                    else
+                        outkolvostolb = false;
+                }
+                int[,] nums = new int[kolvostrok, kolvostolb];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < kolvostrok; i++)
+                {
+                    for (int j = 0; j < kolvostolb; j++)
+                    {
+                        nums[i, j] = rnd.Next(-100, 100);
+                        Console.Write(nums[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //===============================
+                if ((nums[0, 0] % 2 == 0 || nums[kolvostrok-1, 0] % 2 == 0) && (nums[0, 0] != 0 && nums[0, kolvostolb - 1] != 0))
+                    Console.WriteLine($"a) в левом верхнем ({nums[0, 0]}) или левом нижнем ({nums[kolvostrok - 1, 0]}) углах есть четные числа");
+                else
+                    Console.WriteLine($"a) в левом верхнем ({nums[0, 0]}) или левом нижнем ({nums[kolvostrok - 1, 0]}) углах нет четные числа");
+                //==============================
+                if ((nums[0, kolvostolb-1] % 10 == 0 || nums[kolvostrok-1, kolvostolb - 1] % 10 == 0))
+                    Console.WriteLine($"б) в правом верхнем ({nums[0, kolvostolb - 1]}) или правом нижнем ({nums[kolvostolb - 1, kolvostolb - 1]}) углах есть числа, оканчивающиеся 0");
+                else
+                    Console.WriteLine($"б) в правом верхнем ({nums[0, kolvostolb - 1]}) или правом нижнем ({nums[kolvostolb - 1, kolvostolb - 1]}) углах нет числа, оканчивающегося 0");
+            }
+            void n21()
+            {
+                Console.Write("Введите количество строк в массиве: ");
+                int kolvostrok = 0; bool outkolvostrok = true;
+                while (outkolvostrok)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvostrok))
+                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                    else if (kolvostrok <= 0)
+                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                    else
+                        outkolvostrok = false;
+                }
+                Console.Write("Введите количество столбцов в массиве: ");
+                int kolvostolb = 0; bool outkolvostolb = true;
+                while (outkolvostolb)
             {
             
             }
