@@ -1708,11 +1708,35 @@ namespace Dvumerny_massiv
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
             {
-            
+                    if (!int.TryParse(Console.ReadLine(), out kolvostolb))
+                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                    else if (kolvostolb <= 0)
+                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                    else
+                        outkolvostolb = false;
             }
-            void n20 () 
+                int[,] nums = new int[kolvostrok, kolvostolb];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < kolvostrok; i++)
+                {
+                    for (int j = 0; j < kolvostolb; j++)
             { 
-            
+                        nums[i, j] = rnd.Next(-100, 100);
+                        Console.Write(nums[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //===============================
+                if ((nums[0, kolvostolb - 1] % 2 == 0 || nums[kolvostrok - 1, kolvostolb - 1] % 2 == 0) && (nums[0, kolvostolb - 1] != 0 && nums[kolvostrok - 1, kolvostolb - 1] != 0))
+                    Console.WriteLine($"a) в правом верхнем ({nums[0, kolvostolb-1]}) или правом нижнем ({nums[kolvostrok - 1, kolvostolb-1]}) углах есть четные числа");
+                else
+                    Console.WriteLine($"a) в правом верхнем ({nums[0, kolvostolb - 1]}) или правом нижнем ({nums[kolvostrok - 1, kolvostolb - 1]}) углах нет четных чисел");
+                //==============================
+                if ((nums[0, 0] % 10 == 5 || nums[kolvostrok - 1, 0] % 10 == 5))
+                    Console.WriteLine($"б) в левом верхнем ({nums[0, 0]}) или левом нижнем ({nums[kolvostrok - 1, 0]}) углах есть числа, оканчивающиеся 0");
+                else
+                    Console.WriteLine($"б) в левом верхнем ({nums[0, 0]}) или левом нижнем ({nums[kolvostrok - 1, 0]}) углах нет числа, оканчивающегося 0");
             }
             Console.Write("Для завершения программы нажмите Enter");
             Console.ReadLine();
