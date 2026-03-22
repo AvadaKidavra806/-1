@@ -22,7 +22,8 @@ namespace массив_на_с_
             //Изменение_исходного_массива.Изменение_исходного_массива ы = new Изменение_исходного_массива.Изменение_исходного_массива(); ы.Номера();
             //ReshenieSin.Sin sin= new ReshenieSin.Sin(); sin.sin();
             //ReshenieSislosh.Sinslosh sinslosh = new ReshenieSislosh.Sinslosh(); sinslosh.sin();
-            Dvumerny_massiv.Ghf ghf = new Dvumerny_massiv.Ghf(); ghf.Edf();
+            //Dvumerny_massiv.Ghf ghf = new Dvumerny_massiv.Ghf(); ghf.Edf();
+            MatricaDiagonali.Resheniy resheniy = new MatricaDiagonali.Resheniy(); resheniy.Qwerty();
             //Odnomermassiv.Nap nap = new Odnomermassiv.Nap(); nap.Gha();
             void Счетчик_символов_строки ()
             {
@@ -57,9 +58,9 @@ namespace массив_на_с_
                 //-0,59375
             }
             //for_chisl_metod();
-            Console.WriteLine("Это черновик!");
+            /*Console.WriteLine("Это черновик!");
             Console.Write("Для завершения программы нажмите любую клавишу");
-            Console.ReadKey();
+            Console.ReadKey();*/
             //Console.Write(Console.ReadLine().ToLower());
             //==========
             /*Console.Write("Введите колво элементов массива ");

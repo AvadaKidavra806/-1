@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Двумерный массив.cs" />
     <Compile Include="Изменение_исходного_массива.cs" />
+    <Compile Include="Матрица, диагонали.cs" />
     <Compile Include="Одномерный массив, онли четные.cs" />
     <Compile Include="Черновик.cs" />
   </ItemGroup>
