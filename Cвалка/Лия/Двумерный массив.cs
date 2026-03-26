@@ -238,7 +238,7 @@ namespace Dvumerny_massiv
                     {
                         if (!int.TryParse(Console.ReadLine(), out x))
                             Console.Write("Ошибка! Введите номер столбца еще раз ");
-                        else if (x <= 0 || t > kolvostolb)
+                        else if (x <= 0 || x > kolvostolb)
                             Console.Write($"Номер столбца не может быть неположительным и больше кол-ва  столбов в массиве ({kolvostolb})\nВведите номер столбца еще раз ");
                         else
                             outx = false;

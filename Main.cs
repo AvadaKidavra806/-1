@@ -26,7 +26,8 @@ namespace Main
             //MatricaDiagonali.Resheniy resheniy = new MatricaDiagonali.Resheniy(); resheniy.Qwerty();
             //Dvumerny_massiv_obrabotka.Ghf ghf = new Dvumerny_massiv_obrabotka.Ghf(); ghf.Edf();
             //Odnomermassiv.Nap nap = new Odnomermassiv.Nap(); nap.Gha();
-            ClassForMassiv.Help help = new ClassForMassiv.Help(); help.help();
+            Dvumerny_massiv_obrabotka.Ghf Ghf = new Dvumerny_massiv_obrabotka.Ghf(); Ghf.Edf();
+            //ClassForMassiv.Help help = new ClassForMassiv.Help(); help.help();
             Console.Write("Для завершения программы нажмите Enter");
             Console.ReadLine();
         }
