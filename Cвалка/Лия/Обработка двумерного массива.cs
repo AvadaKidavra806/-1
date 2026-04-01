@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 
 //Dvumerny_massiv_obrabotka.Ghf Ghf = new Dvumerny_massiv_obrabotka.Ghf(); Ghf.Edf();
 namespace Dvumerny_massiv_obrabotka
@@ -7,22 +7,22 @@ namespace Dvumerny_massiv_obrabotka
 	{
 		public void Edf()
 		{
-			Console.WriteLine("Двумерный массив обработка");
-			Console.Write("Введите номер задания: ");
+			Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РѕР±СЂР°Р±РѕС‚РєР°");
+			Console.Write("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ: ");
 			byte NomerZadaniy = 1; bool NomerZadaniyOut = true;
 			while (NomerZadaniyOut)
 			{
 				if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
-					Console.Write("Ошибка! Введите номер задания еще раз ");
+					Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");
 				else if (NomerZadaniy <= 0 || NomerZadaniy > 5)
-					Console.Write("В дз всего 5 заданий, Введите номер задания еще раз ");
+					Console.Write("Р’ РґР· РІСЃРµРіРѕ 5 Р·Р°РґР°РЅРёР№, Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");
 				else
 					NomerZadaniyOut = false;
 
 			}
 			switch (NomerZadaniy)
 			{
-                case 1: n1(); break; //есть косяк по i, j  в др мб тоже
+                case 1: n1(); break; //РµСЃС‚СЊ РєРѕСЃСЏРє РїРѕ i, j  РІ РґСЂ РјР± С‚РѕР¶Рµ
                 case 2: n2(); break;
                 case 3: n3(); break;
                 case 4: n4(); break;
@@ -30,33 +30,33 @@ namespace Dvumerny_massiv_obrabotka
 			}
 			void n1 ()
 			{
-                Console.Write("Введите количество строк в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostrok = 0; bool outkolvostrok = true;
                 while (outkolvostrok)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostrok))
-                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok <= 0)
-                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚СЂРѕРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok < 5)
-                        Console.Write("При таком кол-ве строк нельзя найти элемент пятой строки. Введите кол-во строк еще раз ");
+                        Console.Write("РџСЂРё С‚Р°РєРѕРј РєРѕР»-РІРµ СЃС‚СЂРѕРє РЅРµР»СЊР·СЏ РЅР°Р№С‚Рё СЌР»РµРјРµРЅС‚ РїСЏС‚РѕР№ СЃС‚СЂРѕРєРё. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostrok = false;
                 }
-                Console.Write("Введите количество столбцов в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostolb))
-                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb <= 0)
-                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostolb = false;
                 }
                 int[,] nums = new int[kolvostrok, kolvostolb];
                 Random rnd = new Random();
-                Console.WriteLine("Двумерный массив: ");
+                Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ: ");
                 for (int i = 0; i < kolvostrok; i++)
                 {
                     bool d = true;
@@ -66,14 +66,14 @@ namespace Dvumerny_massiv_obrabotka
                         {
                             for (int j = 0; j < kolvostolb; j++)
                             {
-                                nums[j, i] = rnd.Next(100);
-                                if (nums[j, i] == 13)
+                                nums[i, j] = rnd.Next(100);
+                                if (nums[i, j] == 13)
                                     d = false;
                             }
                         }
                         for (int j = 0; j < kolvostolb; j++)
                         {
-                            Console.Write(nums[j, i] + "\t");
+                            Console.Write(nums[i, j] + "\t");
                         }
                     }
                 
@@ -81,8 +81,8 @@ namespace Dvumerny_massiv_obrabotka
                     {
                         for (int j = 0; j < kolvostolb; j++)
                         {
-                                nums[j, i] = rnd.Next(100);
-                            Console.Write(nums[j, i] + "\t");
+                                nums[i, j] = rnd.Next(100);
+                            Console.Write(nums[i, j] + "\t");
                         }
                     }
                     Console.WriteLine();
@@ -91,37 +91,37 @@ namespace Dvumerny_massiv_obrabotka
                 int j2 = 0;
                 while (j2 < kolvostolb && nums[4, j2] != 13 )
                     j2++;
-                Console.WriteLine("Номер столбца, в котором расположен самый левый элемент 13 в пятой строке: "+(j2+1));
+                Console.WriteLine("РќРѕРјРµСЂ СЃС‚РѕР»Р±С†Р°, РІ РєРѕС‚РѕСЂРѕРј СЂР°СЃРїРѕР»РѕР¶РµРЅ СЃР°РјС‹Р№ Р»РµРІС‹Р№ СЌР»РµРјРµРЅС‚ 13 РІ РїСЏС‚РѕР№ СЃС‚СЂРѕРєРµ: "+(j2+1));
             }
             void n2 ()
             {
-                Console.Write("Введите количество строк в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostrok = 0; bool outkolvostrok = true;
                 while (outkolvostrok)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostrok))
-                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok <= 0)
-                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚СЂРѕРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok < 3)
-                        Console.Write("При таком кол-ве строк нельзя найти элемент третьей строки. Введите кол-во строк еще раз ");
+                        Console.Write("РџСЂРё С‚Р°РєРѕРј РєРѕР»-РІРµ СЃС‚СЂРѕРє РЅРµР»СЊР·СЏ РЅР°Р№С‚Рё СЌР»РµРјРµРЅС‚ С‚СЂРµС‚СЊРµР№ СЃС‚СЂРѕРєРё. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostrok = false;
                 }
-                Console.Write("Введите количество столбцов в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostolb))
-                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb <= 0)
-                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostolb = false;
                 }
                 int[,] nums = new int[kolvostrok, kolvostolb];
                 Random rnd = new Random();
-                Console.WriteLine("Двумерный массив: ");
+                Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ: ");
                 for (int i = 0; i < kolvostrok; i++)
                 {
                     bool d = true;
@@ -158,38 +158,38 @@ namespace Dvumerny_massiv_obrabotka
                 {
                     j2--;
                 }
-                Console.WriteLine("Номер столбца, в котором расположен самый правый элемент 0 в третьей строке: " + (j2 + 1));
+                Console.WriteLine("РќРѕРјРµСЂ СЃС‚РѕР»Р±С†Р°, РІ РєРѕС‚РѕСЂРѕРј СЂР°СЃРїРѕР»РѕР¶РµРЅ СЃР°РјС‹Р№ РїСЂР°РІС‹Р№ СЌР»РµРјРµРЅС‚ 0 РІ С‚СЂРµС‚СЊРµР№ СЃС‚СЂРѕРєРµ: " + (j2 + 1));
 
             }
             void n3 ()
             {
-                Console.Write("Введите количество строк в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostrok = 0; bool outkolvostrok = true;
                 while (outkolvostrok)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostrok))
-                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok <= 0)
-                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚СЂРѕРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostrok = false;
                 }
-                Console.Write("Введите количество столбцов в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostolb))
-                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb <= 0)
-                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb < 2)
-                        Console.Write("При таком кол-ве столбцов невозможно нельзя найти элемент второго столбца. Введите кол-во столбцов еще раз ");
+                        Console.Write("РџСЂРё С‚Р°РєРѕРј РєРѕР»-РІРµ СЃС‚РѕР»Р±С†РѕРІ РЅРµРІРѕР·РјРѕР¶РЅРѕ РЅРµР»СЊР·СЏ РЅР°Р№С‚Рё СЌР»РµРјРµРЅС‚ РІС‚РѕСЂРѕРіРѕ СЃС‚РѕР»Р±С†Р°. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostolb = false;
                 }
                 int[,] nums = new int[kolvostrok, kolvostolb];
                 Random rnd = new Random();
-                Console.WriteLine("Двумерный массив: ");
+                Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ: ");
                 void ZapolnenieMassiva (out bool d)
                 {
                     d = true;
@@ -221,37 +221,37 @@ namespace Dvumerny_massiv_obrabotka
                 int j2 = 0;
                 while (j2 < kolvostrok && nums[ j2, 1] != 21)
                     j2++;
-                Console.WriteLine("Номер строки, в которой расположен самый верхний элемент 21 во втором столбце: " + (j2 + 1));
+                Console.WriteLine("РќРѕРјРµСЂ СЃС‚СЂРѕРєРё, РІ РєРѕС‚РѕСЂРѕР№ СЂР°СЃРїРѕР»РѕР¶РµРЅ СЃР°РјС‹Р№ РІРµСЂС…РЅРёР№ СЌР»РµРјРµРЅС‚ 21 РІРѕ РІС‚РѕСЂРѕРј СЃС‚РѕР»Р±С†Рµ: " + (j2 + 1));
             }
             void n4 ()
             {
-                Console.Write("Введите количество строк в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostrok = 0; bool outkolvostrok = true;
                 while (outkolvostrok)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostrok))
-                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok <= 0)
-                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚СЂРѕРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostrok = false;
                 }
-                Console.Write("Введите количество столбцов в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostolb))
-                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb <= 0)
-                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb < 2)
-                        Console.Write("При таком кол-ве столбцов невозможно нельзя найти элемент второго столбца. Введите кол-во столбцов еще раз ");
+                        Console.Write("РџСЂРё С‚Р°РєРѕРј РєРѕР»-РІРµ СЃС‚РѕР»Р±С†РѕРІ РЅРµРІРѕР·РјРѕР¶РЅРѕ РЅРµР»СЊР·СЏ РЅР°Р№С‚Рё СЌР»РµРјРµРЅС‚ РІС‚РѕСЂРѕРіРѕ СЃС‚РѕР»Р±С†Р°. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostolb = false;
                 }
                 int[,] nums = new int[kolvostrok, kolvostolb];
                 Random rnd = new Random();
-                Console.WriteLine("Двумерный массив: ");
+                Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ: ");
                 void ZapolnenieMassiva(out bool d)
                 {
                     d = true;
@@ -283,37 +283,37 @@ namespace Dvumerny_massiv_obrabotka
                 int j2 = kolvostrok - 1;
                 while (j2 >= 0 && nums[1, j2] != 10)
                     j2--;
-                Console.WriteLine("Номер строки, в которой расположен самый нижний элемент 10 во втором столбце: " + (j2 + 1));
+                Console.WriteLine("РќРѕРјРµСЂ СЃС‚СЂРѕРєРё, РІ РєРѕС‚РѕСЂРѕР№ СЂР°СЃРїРѕР»РѕР¶РµРЅ СЃР°РјС‹Р№ РЅРёР¶РЅРёР№ СЌР»РµРјРµРЅС‚ 10 РІРѕ РІС‚РѕСЂРѕРј СЃС‚РѕР»Р±С†Рµ: " + (j2 + 1));
             }
             void n5 ()
             {
-                Console.Write("Введите количество строк в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostrok = 0; bool outkolvostrok = true;
                 while (outkolvostrok)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostrok))
-                        Console.Write("Ошибка! Введите кол-во строк еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok <= 0)
-                        Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚СЂРѕРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else if (kolvostrok < 5)
-                        Console.Write("При таком кол-ве строк нельзя найти элемент пятой строки. Введите кол-во строк еще раз ");
+                        Console.Write("РџСЂРё С‚Р°РєРѕРј РєРѕР»-РІРµ СЃС‚СЂРѕРє РЅРµР»СЊР·СЏ РЅР°Р№С‚Рё СЌР»РµРјРµРЅС‚ РїСЏС‚РѕР№ СЃС‚СЂРѕРєРё. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostrok = false;
                 }
-                Console.Write("Введите количество столбцов в массиве: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°СЃСЃРёРІРµ: ");
                 int kolvostolb = 0; bool outkolvostolb = true;
                 while (outkolvostolb)
                 {
                     if (!int.TryParse(Console.ReadLine(), out kolvostolb))
-                        Console.Write("Ошибка! Введите кол-во столбцов еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else if (kolvostolb <= 0)
-                        Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
+                        Console.Write("РљРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј. Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РµС‰Рµ СЂР°Р· ");
                     else
                         outkolvostolb = false;
                 }
                 int[,] nums = new int[kolvostrok, kolvostolb];
                 Random rnd = new Random();
-                Console.WriteLine("Двумерный массив: ");
+                Console.WriteLine("Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ: ");
                 for (int i = 0; i < kolvostrok; i++)
                 {
                     for (int j = 0; j < kolvostolb; j++)
@@ -325,23 +325,23 @@ namespace Dvumerny_massiv_obrabotka
                 }
                 //==============
                 {
-                    Console.Write("Введите номер строки, в которой необходимо провести проверку: ");
+                    Console.Write("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё, РІ РєРѕС‚РѕСЂРѕР№ РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРѕРІРµСЃС‚Рё РїСЂРѕРІРµСЂРєСѓ: ");
                     int t = 0; bool outt = true;
                     while (outt)
                     {
                         if (!int.TryParse(Console.ReadLine(), out t))
-                            Console.Write("Ошибка! Введите номер строки еще раз ");
+                            Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё РµС‰Рµ СЂР°Р· ");
                         else if (t <= 0 || t > kolvostrok)
-                            Console.Write($"Номер строки не может быть неположительным и больше кол-ва  строк в массиве ({kolvostrok})\nВведите номер строки еще раз ");
+                            Console.Write($"РќРѕРјРµСЂ СЃС‚СЂРѕРєРё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј Рё Р±РѕР»СЊС€Рµ РєРѕР»-РІР°  СЃС‚СЂРѕРє РІ РјР°СЃСЃРёРІРµ ({kolvostrok})\nР’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё РµС‰Рµ СЂР°Р· ");
                         else
                             outt = false;
                     }
-                    Console.Write("Введите число, для проверки ");
+                    Console.Write("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ, РґР»СЏ РїСЂРѕРІРµСЂРєРё ");
                     int Chislo = 0; bool OutChislo = true;
                     while (OutChislo)
                     {
                         if (!int.TryParse(Console.ReadLine(), out Chislo))
-                            Console.Write("Ошибка! Введите число еще раз ");
+                            Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РµС‰Рµ СЂР°Р· ");
                         else
                             OutChislo = false;
                     }
@@ -353,29 +353,29 @@ namespace Dvumerny_massiv_obrabotka
                         j2++;
                     }
                     if (!asd)
-                        Console.WriteLine($"a) В {t}-й строке есть {Chislo}. Одна из позиций такого числа: [{t}, {j2}]");
+                        Console.WriteLine($"a) Р’ {t}-Р№ СЃС‚СЂРѕРєРµ РµСЃС‚СЊ {Chislo}. РћРґРЅР° РёР· РїРѕР·РёС†РёР№ С‚Р°РєРѕРіРѕ С‡РёСЃР»Р°: [{t}, {j2}]");
                     else
-                        Console.WriteLine($"a) В {t}-й строке нет {Chislo}");
+                        Console.WriteLine($"a) Р’ {t}-Р№ СЃС‚СЂРѕРєРµ РЅРµС‚ {Chislo}");
                 }
                 //============================
                 {
-                    Console.Write("Введите номер столбца элемента, в котороv необходимо провести проверку: ");
+                    Console.Write("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° СЌР»РµРјРµРЅС‚Р°, РІ РєРѕС‚РѕСЂРѕv РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРѕРІРµСЃС‚Рё РїСЂРѕРІРµСЂРєСѓ: ");
                     int x = 0; bool outx = true;
                     while (outx)
                     {
                         if (!int.TryParse(Console.ReadLine(), out x))
-                            Console.Write("Ошибка! Введите номер столбца еще раз ");
+                            Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° РµС‰Рµ СЂР°Р· ");
                         else if (x <= 0 || x > kolvostolb)
-                            Console.Write($"Номер столбца не может быть неположительным и больше кол-ва  столбов в массиве ({kolvostolb})\nВведите номер столбца еще раз ");
+                            Console.Write($"РќРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј Рё Р±РѕР»СЊС€Рµ РєРѕР»-РІР°  СЃС‚РѕР»Р±РѕРІ РІ РјР°СЃСЃРёРІРµ ({kolvostolb})\nР’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° РµС‰Рµ СЂР°Р· ");
                         else
                             outx = false;
                     }
-                    Console.Write("Введите число, для проверки ");
+                    Console.Write("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ, РґР»СЏ РїСЂРѕРІРµСЂРєРё ");
                     int Chislo = 0; bool OutChislo = true;
                     while (OutChislo)
                     {
                         if (!int.TryParse(Console.ReadLine(), out Chislo))
-                            Console.Write("Ошибка! Введите число еще раз ");
+                            Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РµС‰Рµ СЂР°Р· ");
                         else
                             OutChislo = false;
                     }
@@ -387,9 +387,9 @@ namespace Dvumerny_massiv_obrabotka
                         j2++;
                     }
                     if (!asd)
-                        Console.WriteLine($"б) В {x}-м столбце есть число кратное {Chislo}. Одна из позиций такого числа: [{j2}, {x}]");
+                        Console.WriteLine($"Р±) Р’ {x}-Рј СЃС‚РѕР»Р±С†Рµ РµСЃС‚СЊ С‡РёСЃР»Рѕ РєСЂР°С‚РЅРѕРµ {Chislo}. РћРґРЅР° РёР· РїРѕР·РёС†РёР№ С‚Р°РєРѕРіРѕ С‡РёСЃР»Р°: [{j2}, {x}]");
                     else
-                        Console.WriteLine($"б) В {x}-м столбце нет {Chislo}");
+                        Console.WriteLine($"Р±) Р’ {x}-Рј СЃС‚РѕР»Р±С†Рµ РЅРµС‚ {Chislo}");
                 }
             }
         }

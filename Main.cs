@@ -14,7 +14,6 @@ namespace Main
     {
         static void Main()
         {
-            Console.WriteLine(3 / 2);
             // Program program = new Program(); program.Начало();
             //Дихотомия.Дихотомия dix = new Дихотомия.Дихотомия(); dix.Решение();
             //Blockshema blockshema = new Blockshema(); blockshema.Nomera();
@@ -28,8 +27,8 @@ namespace Main
             //Odnomermassiv.Nap nap = new Odnomermassiv.Nap(); nap.Gha();
             //Dvumerny_massiv_obrabotka.Ghf Ghf = new Dvumerny_massiv_obrabotka.Ghf(); Ghf.Edf();
             //ClassForMassiv.Help help = new ClassForMassiv.Help(); help.help();
-            //DvumerMasMaxMin.Reshenie reshenie = new DvumerMasMaxMin.Reshenie(); reshenie.Nomerov();
-            Zadachi.Zapolnenie zapolnenie = new Zadachi.Zapolnenie(); zapolnenie.Vuvod();
+            DvumerMasMaxMin.Reshenie reshenie = new DvumerMasMaxMin.Reshenie(); reshenie.Nomerov();
+            //Zadachi.Zapolnenie zapolnenie = new Zadachi.Zapolnenie(); zapolnenie.Vuvod();
             Console.Write("Для завершения программы нажмите Enter");
             Console.ReadLine();
         }
