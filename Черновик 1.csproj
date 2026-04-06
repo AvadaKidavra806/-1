@@ -49,6 +49,7 @@
     <Compile Include="Задачи на нахождение макс и мин в двумерном массиве.cs" />
     <Compile Include="Класс для одномерного массива 1.cs" />
     <Compile Include="Методы_РПМ.cs" />
+    <Compile Include="Проверка условия после выполнения расчетов в двумерном массиве.cs" />
     <Compile Include="Черновик.cs" />
   </ItemGroup>
   <ItemGroup>

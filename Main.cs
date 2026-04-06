@@ -15,9 +15,10 @@ namespace Main
         static void Main()
         {
             //ClassForMassiv.Help help = new ClassForMassiv.Help(); help.help();
-            DvumerMasMaxMin.Reshenie reshenie = new DvumerMasMaxMin.Reshenie(); reshenie.Nomerov();
+            //DvumerMasMaxMin.Reshenie reshenie = new DvumerMasMaxMin.Reshenie(); reshenie.Nomerov();
             //Zadachi.Zapolnenie zapolnenie = new Zadachi.Zapolnenie(); zapolnenie.Vuvod();
             //Metod.Hellp hellp = new Metod.Hellp(); hellp.Heellp();
+            ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov(); posle.DmumerMassiv();
             Console.Write("Для завершения программы нажмите Enter");
             Console.ReadLine();
         }
