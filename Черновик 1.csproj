@@ -50,6 +50,7 @@
     <Compile Include="Класс для одномерного массива 1.cs" />
     <Compile Include="Методы_РПМ.cs" />
     <Compile Include="Проверка условия после выполнения расчетов в двумерном массиве.cs" />
+    <Compile Include="РПМ отработка методов %28вклад, расстояние%29.cs" />
     <Compile Include="Черновик.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -22,3 +22,11 @@ C:\Users\student\Documents\Ильенко\Новая папка\obj\Debug\Чер
 C:\Users\student\Documents\Ильенко\Новая папка\obj\Debug\Черновик 1.exe
 C:\Users\student\Documents\Ильенко\Новая папка\obj\Debug\Черновик 1.pdb
 C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.exe.config
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\bin\Debug\Черновик 1.exe.config
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\bin\Debug\Черновик 1.exe
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\bin\Debug\Черновик 1.pdb
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\obj\Debug\Черновик 1.csproj.AssemblyReference.cache
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\obj\Debug\Черновик 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\obj\Debug\Черновик 1.csproj.CoreCompileInputs.cache
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\obj\Debug\Черновик 1.exe
+C:\Users\student.201-05\Documents\Калякин Ильенко\Новая папка\obj\Debug\Черновик 1.pdb

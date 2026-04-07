@@ -21,40 +21,29 @@ namespace Metod
 	}
 	internal class Treugolnik
 	{
-		/*double a;
-		double b;
-		double c;*/
 		double[] abc = new double[3];
 		public void VvodStoron()
 		{
 			double[] abc = new double[3];
-			Console.Write("Введите стороны треугольника через зпт или пробел (а, b, c) ");
-			bool OutStoron = true;
-			while (OutStoron)
+			for (int i = 0; i < abc.Length; i++)
 			{
-				List<string> Storon = Console.ReadLine().Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-				if (Storon.Count() != 3)
-					Console.Write("Ошибка! Введите стороны еще раз ");
-				else
-				{
-					int i = 0;
-					while (i < Storon.Count())  //знаю, что можно написать просто 3
-					{
-						if (!double.TryParse(Storon[i], out abc[i]))
-						{
-							Console.Write($"Ошибка! Введите {i + 1}-ю сторону треугольника еще раз ");
-							while (!double.TryParse(Console.ReadLine(), out abc[i]))
-								Console.Write($"Ошибка! Введите {i + 1}-ю сторону треугольника еще раз ");
-						}
-						if (abc[i] <= 0)
-							Console.Write($"Сторона не может быть неположительной. Введите {i + 1}-у сторону еще раз ");
-						else
-							i++;
-					}
-					OutStoron = false;
-				}
-
+				VvodStoron(i, out abc[i]);
 			}
+			void VvodStoron (int i, out double storona)
+			{
+				Console.Write($"Введите {i + 1}-ю сторону ");
+				storona = 0; bool outstorona = true;
+                while (outstorona)
+                {
+                    if (!double.TryParse(Console.ReadLine(), out storona))
+                        Console.Write($"Ошибка! Введите {i + 1}-ю сторону треугольника еще раз ");
+                    else if (storona <= 0)
+                        Console.Write($"{i + 1}-я сторона не может быть неположительной. Введите {i + 1}-ю сторону еще раз ");
+                    else
+                        outstorona = false;
+
+                }
+            }
 			InizialStoron(abc);
 		}
 		private void InizialStoron(double[] abc)
@@ -76,7 +65,8 @@ namespace Metod
 				}
 				asd++;
 			}
-			return true;
+            Console.WriteLine($"Треугольник с такими сторонами существует");
+            return true;
 		}
 		public double Ploshad()
 		{

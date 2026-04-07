@@ -18,7 +18,8 @@ namespace Main
             //DvumerMasMaxMin.Reshenie reshenie = new DvumerMasMaxMin.Reshenie(); reshenie.Nomerov();
             //Zadachi.Zapolnenie zapolnenie = new Zadachi.Zapolnenie(); zapolnenie.Vuvod();
             //Metod.Hellp hellp = new Metod.Hellp(); hellp.Heellp();
-            ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov(); posle.DmumerMassiv();
+            //ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov(); posle.DmumerMassiv();
+            Otrabotka.Metodov metodov = new Otrabotka.Metodov(); metodov.TipoMain();
             Console.Write("Для завершения программы нажмите Enter");
             Console.ReadLine();
         }
