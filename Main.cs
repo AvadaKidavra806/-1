@@ -1,5 +1,6 @@
 ﻿using System;
 
+//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
 namespace Main
 {
     internal class ClaasMain
