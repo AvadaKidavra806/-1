@@ -52,7 +52,7 @@ namespace ProverkaUslovia
                     else if (KolvoStrok <= 0)
                         Console.Write("Кол-во строк не может быть неположительным. Введите кол-во строк еще раз ");
                     else if (UslovieStok(KolvoStrok))
-                        Console.Write($"{UslovieStokStr} Введите кол-во строк еще раз "); //надо додумать
+                        Console.Write($"{UslovieStokStr} Введите кол-во строк еще раз "); 
                     else
                         OutKolvoStrok = false;
                 }
@@ -65,7 +65,7 @@ namespace ProverkaUslovia
                     else if (KolvoStolb <= 0)
                         Console.Write("Кол-во столбцов не может быть неположительным. Введите кол-во столбцов еще раз ");
                     else if (UslovieStolb(KolvoStolb))
-                        Console.Write($"{UslovieStolbStr} Введите кол-во столбцов еще раз "); // надо додумать
+                        Console.Write($"{UslovieStolbStr} Введите кол-во столбцов еще раз ");
                     else
                         OutKolvoStolb = false;
                 }
