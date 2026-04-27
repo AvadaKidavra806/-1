@@ -336,7 +336,7 @@ namespace Rabota
 				}
 				//=======================
 				Console.WriteLine("a)Среднее арифметическое элементов главной диагонали равна: " + sumglav / Razryad);
-				Console.WriteLine("б)Среднее арифметическое элементов побочной диагонали равна: " + sumpoboch / Razryad);
+				Console.WriteLine("б)Среднее арифметическое элементов побочной диагонали равна: " + Math.Round(sumpoboch / Razryad, 2));
 			}
 			void n11()
 			{
@@ -375,6 +375,7 @@ namespace Rabota
                             Console.WriteLine($"{i + 1}\t\t{chisla[i]}");
                     }
                 }
+				//Console.WriteLine("Одномерный массив: " + String.Join(", ", chisla));
                 //==================
                 Console.WriteLine("Способ 2 ");
 				Console.WriteLine("№ Строки\tСумма элементов ");

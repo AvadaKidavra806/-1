@@ -430,9 +430,9 @@ namespace ProverkaUslovia
                 int Sum = 0;
                 for (int i = 0; i < KolvoStrok; i++) Sum += massiv[i, NomerStolb - 1];
                 if (Sum % Chislo == 0)
-                    Console.WriteLine($"б) Верно, сумма элементов заданного столбца кратна заданному числу (proiz: {Sum}, chislo: {Chislo})");
+                    Console.WriteLine($"б) Верно, сумма элементов заданного столбца кратна заданному числу (Sum: {Sum}, chislo: {Chislo})");
                 else
-                    Console.WriteLine($"б) Не верно, сумма элементов заданного столбца не кратна заданному числу (proiz: {Sum}, chislo: {Chislo})");
+                    Console.WriteLine($"б) Не верно, сумма элементов заданного столбца не кратна заданному числу (Sum: {Sum}, chislo: {Chislo})");
             }
             void n8()
             {
@@ -479,9 +479,9 @@ namespace ProverkaUslovia
                 int Sum = 0;
                 for (int i = 0; i < KolvoStrok; i++) Sum += massiv[NomerStroki - 1, i];
                 if (Sum % 10 == 0)
-                    Console.WriteLine($"a) Верно, сумма элементов заданной строки заканчивается нулем (proiz: {Sum})");
+                    Console.WriteLine($"a) Верно, сумма элементов заданной строки заканчивается нулем (Sum: {Sum})");
                 else
-                    Console.WriteLine($"a) Не верно, сумма элементов заданной строки не заканчивается нулем (proiz: {Sum}, chislo)");
+                    Console.WriteLine($"a) Не верно, сумма элементов заданной строки не заканчивается нулем (Sum: {Sum})");
                 //=============================
                 if (sum2 % 2 == 0 && sum2 != 0)
                     Console.WriteLine("б) Cумма элементов первой строки является четным числом (" + sum2 + ")");
