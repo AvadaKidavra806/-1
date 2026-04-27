@@ -205,8 +205,8 @@ namespace RabotaSNeskolkimi
                 {
                     for (int j = 0; j < KolvoStolb; j++)
                     {
-                        massiv[i, j] = Math.Round(Math.Abs(massiv1[i, j] - massiv[i, j]), 2);
-                        Console.Write(massiv[i, j] + "\t");
+                        massiv2[i, j] = Math.Round(Math.Abs(massiv1[i, j] - massiv[i, j]), 2);
+                        Console.Write(massiv2[i, j] + "\t");
                     }
                     Console.WriteLine();
                 }
