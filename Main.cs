@@ -7,7 +7,6 @@ namespace Main
     {
         static void Main()
         {
-            //Console.WriteLine(123 / 10);
             //Черновик.Черновик черновик = new Черновик.Черновик(); черновик.Решение();
             //ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov(); posle.DmumerMassiv();
             //Rabota.KvadratMassiv massiv = new Rabota.KvadratMassiv(); massiv.DmumerMassiv();

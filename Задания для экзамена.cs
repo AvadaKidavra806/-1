@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -31,13 +32,13 @@ namespace Zadaniy
                 {
                     case 1: n1(); break;
                     case 2: n2(); break;
-                case 3: n3(); break;
-                case 4: n4(); break;
-                case 5: n5(); break;/*
-                case 6: n6(); break;
-                case 7: n7(); break;
+                    case 3: n3(); break;
+                    case 4: n4(); break;
+                    case 5: n5(); break;
+                    case 6: n6(); break;
+                    case 7: n7(); break;
                 case 8: n8(); break;
-                case 9: n9(); break;*/
+                case 9: n9(); break;
                     default:
                         Console.WriteLine("Пока что не готов этот номер");
                         break;
@@ -150,7 +151,7 @@ namespace Zadaniy
                             OutNomerStroki = false;
                     }
                     double[] ElementsNStroki = new double[KolvoStolb];
-                    for (int i = 0; i < KolvoStolb; i++) ElementsNStroki[KolvoStolb - 1 - i] = massiv[NomerStroki - 1,i ];
+                    for (int i = 0; i < KolvoStolb; i++) ElementsNStroki[KolvoStolb - 1 - i] = massiv[NomerStroki - 1, i];
                     Console.WriteLine($"Все элементы {NomerStroki}-й строки, начиная с правого: " + string.Join(", ", ElementsNStroki));
                 }
             }
@@ -208,8 +209,8 @@ namespace Zadaniy
                 //int KolvoStrok = 2; int KolvoStolb = 3;
                 int[,] massiv = new int[KolvoStrok, KolvoStolb];
                 Random random = new Random();
-                int[] sumstolb = new int[KolvoStolb]; 
-                int[] sumstrok = new int[KolvoStrok]; 
+                int[] sumstolb = new int[KolvoStolb];
+                int[] sumstrok = new int[KolvoStrok];
                 Console.WriteLine("Двумерный массив: ");
                 for (int i = 0; i < KolvoStrok; i++)
                 {
@@ -226,12 +227,25 @@ namespace Zadaniy
                 /*Console.WriteLine("Сумма по строкам " + string.Join(", ", sumstrok));
                 Console.WriteLine("Сумма по столбцам " + string.Join(", ",  sumstolb));*/
                 //=================
-                Console.WriteLine("Номер строки с мин суммой элементов: " +( Array.FindIndex(sumstrok, f => f == sumstrok.Min()) + 1));
-                Console.WriteLine("Номер столбца с макс суммой элементов: " + (Array.FindLastIndex(sumstolb, f => f == sumstolb.Max()) + 1));
+                Console.WriteLine("Номер строки с мин суммой элементов: " + (Array.FindIndex(sumstrok, f => f == sumstrok.Min()) + 1)+$" ({sumstrok.Min()})");
+                Console.WriteLine("Номер столбца с макс суммой элементов: " + (Array.FindLastIndex(sumstolb, f => f == sumstolb.Max()) + 1) + $" ({sumstrok.Max()})");
             }
             void n5()
             {
-                int KolvoStrok = 2; int KolvoStolb = 3;
+
+                bool UslovieStrok(int x)
+                {
+                    return false; //при отсутствии условий оставить false
+                }
+                bool UslovieStolb(int x)
+                {
+                    return false; //при отсутствии условий оставить false
+                }
+                string UslovieStokStr = "";
+                string UslovieStolbStr = "";
+                obchee.InicilzasiyMassiva(UslovieStrok, UslovieStolb, UslovieStokStr, UslovieStolbStr, out int KolvoStrok, out int KolvoStolb);
+                //========================
+                //int KolvoStrok = 2; int KolvoStolb = 3;
                 int[,] massiv = new int[KolvoStrok, KolvoStolb];
                 Random random = new Random();
                 Console.WriteLine("Двумерный массив: ");
@@ -274,14 +288,219 @@ namespace Zadaniy
                 int sumn = 0;
                 for (int i = 0; i < KolvoStrok; i++) sumn += massiv[i, NomerStolb - 1];
                 if (sumk == sumn)
-                    Console.WriteLine($"Сумма k-й строки равна сумме n-го столбца (sumk: {sumk}, sumn: {sumn})");
+                    Console.WriteLine($"Сумма {NomerStroki}-й строки равна сумме {NomerStolb}-го столбца (sumk: {sumk}, sumn: {sumn})");
                 else if (sumk > sumn)
-                    Console.WriteLine($"Большее из суммы k-й строки и суммы n-го столбца - сумма k-й строки (sumk: {sumk}, sumn: {sumn})");
+                    Console.WriteLine($"Большее из суммы {NomerStroki}-й строки и суммы {NomerStolb}-го столбца - сумма {NomerStroki}-й строки (sumk: {sumk}, sumn: {sumn})");
                 else
-                    Console.WriteLine($"Большее из суммы k-й строки и суммы n-го столбца - сумма n-го столбца (sumk: {sumk}, sumn: {sumn})");
+                    Console.WriteLine($"Большее из суммы {NomerStroki}-й строки и суммы {NomerStolb}-го столбца - сумма {NomerStolb}-го столбца (sumk: {sumk}, sumn: {sumn})");
 
             }
+            void n6() 
+            {
+                bool UslovieStrok(int x)
+                {
+                    return false; //при отсутствии условий оставить false
+                }
+                bool UslovieStolb(int x)
+                {
+                    return false; //при отсутствии условий оставить false
+                }
+                string UslovieStokStr = "";
+                string UslovieStolbStr = "";
+                obchee.InicilzasiyMassiva(UslovieStrok, UslovieStolb, UslovieStokStr, UslovieStolbStr, out int KolvoStrok, out int KolvoStolb);
+                //========================
+                //int KolvoStrok = 5; int KolvoStolb = 5;
+                int[,] massiv = new int[KolvoStrok, KolvoStolb];
+                Random random = new Random();
+                void ZapolnenieMassiva()
+                {
+                    for (int i = 0; i < KolvoStrok; i++)
+                    {
+                        for (int j = 0; j < KolvoStolb; j++)
+                        {
+                            massiv[i, j] = random.Next(-10, 10);
+                        }
+                    }
+                }
+                bool ProverkaUsloviy() //true если все ок, false если в строчке нет и того, и того
+                {
+                    bool Otrizat = false;
+                    bool Chetnost = false;
+                    for (int i = 0; i < KolvoStrok; i++)
+                    {
+                        Otrizat = false;
+                        Chetnost = false;
+                        for (int j = 0; j < KolvoStolb; j++)
+                        {
+                            Otrizat |= (massiv[i, j] < 0);
+                            Chetnost |= (massiv[i, j] % 2 == 0 && massiv[i, j] != 0);
+                        }
+                        if (Otrizat == false || Chetnost == false)
+                            return false;
+                    }
+                    return true;
+                }
+                void VuvodMassiva()
+                {
+                    for (int i = 0; i < KolvoStrok; i++)
+                    {
+                        for (int j = 0; j < KolvoStolb; j++)
+                        {
+                            Console.Write(massiv[i, j] + "\t");
+                        }
+                        Console.WriteLine();
+                    }
+                }
+                do
+                {
+                    ZapolnenieMassiva();
+                }
+                while (!ProverkaUsloviy());
+                VuvodMassiva();
+                //==========================
+                Console.WriteLine("№ строки\t1st отриц элем");
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    int[] Stroki = new int[KolvoStolb];
+                    for (int j = 0; j < KolvoStolb; j++)
+                    {
+                        Stroki[j] = massiv[i, j];
+                    }
+                    Console.WriteLine($"{i + 1}\t\t{Array.Find(Stroki, h => h < 0)}");
+                }
+                //========================
+                Console.WriteLine("№ строки\tlast четн элем");
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    int[] Stroki = new int[KolvoStolb];
+                    for (int j = 0; j < KolvoStolb; j++)
+                    {
+                        Stroki[j] = massiv[i, j];
+                    }
+                    Console.WriteLine($"{i + 1}\t\t{Array.FindLast(Stroki, h => h % 2 == 0 && h != 0)}");
+                }
+            }
+            void n7()
+            {
+                obchee.SozdanieKvadratnogoMassiva(out int Razryd);
+                //===========
+                //int Razryd = 4;
+                int[,] Matrica = new int[Razryd, Razryd];
+                Random random = new Random();
+                Console.WriteLine("Матрица: ");
+                for (int i = 0; i < Razryd; i++)
+                {
+                    for (int j = 0; j < Razryd; j++)
+                    {
+                        Matrica[i, j] = random.Next(-10, 10);
+                        Console.Write(Matrica[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //===================
+                {
+                    int[] GlavDiagon = new int[Razryd];
+                    for (int i = 0; i < Razryd; i++) GlavDiagon[i] = Matrica[i, i];
+                    Console.WriteLine("Мин элемент главной диагонали: " + GlavDiagon.Min());
+                }
+                //==============
+                {
+                    int[] GlavDiagon = new int[Razryd];
+                    for (int i = 0; i < Razryd; i++) GlavDiagon[i] = Matrica[i, Razryd - 1 - i];
+                    Console.WriteLine("Макс элемент побочной диагонали: " + GlavDiagon.Max());
+                }
+            }
+            void n8() //прописать условие для предпоследней строки и вторую строку
+            {
+                bool UslovieStrok(int x)
+                {
+                    return x<2; //при отсутствии условий оставить false
+                }
+                bool UslovieStolb(int x)
+                {
+                    return x<2; //при отсутствии условий оставить false
+                }
+                string UslovieStokStr = "При таком кол-ве строк нельзя поменять элементы второй строки.";
+                string UslovieStolbStr = "При таком кол-ве столбцов нельзя поменять элементы предпоследнего столбца (Первый столбец - последний, предпоследний не существует).";
+                obchee.InicilzasiyMassiva(UslovieStrok, UslovieStolb, UslovieStokStr, UslovieStolbStr, out int KolvoStrok, out int KolvoStolb);
+                //========================
+                //int KolvoStrok = 2; int KolvoStolb = 3;
+                int[,] massiv = new int[KolvoStrok, KolvoStolb];
+                Random random = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    for (int j = 0; j < KolvoStolb; j++)
+                    {
+                        massiv[i, j] = random.Next(-50, 50);
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //================
+                Console.WriteLine("Поменяны местами первый и предпоследний столбцы ");
+                int[,] massiva = new int[KolvoStrok, KolvoStolb];
+                Array.Copy(massiv, massiva, KolvoStolb*KolvoStrok);
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    (massiva[i, 0], massiva[i, KolvoStolb - 1 - 1]) = (massiva[i, KolvoStolb - 1 - 1], massiva[i, 0]);
+                }
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    for (int j = 0; j < KolvoStolb; j++)
+                    {
+                        Console.Write(massiva[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //===============================
+                Console.WriteLine("Поменяны местами вторая и последняя строки");
+                int[,] massivb= new int[KolvoStrok, KolvoStolb];
+                Array.Copy(massiv, massivb, KolvoStolb * KolvoStrok);
+                for (int i = 0; i < KolvoStolb; i++)
+                {
+                    (massivb[1, i], massivb[KolvoStrok - 1, i]) = (massivb[KolvoStrok - 1, i], massivb[1, i]);
+                }
+                for (int i = 0; i < KolvoStrok; i++)
+                {
+                    for (int j = 0; j < KolvoStolb; j++)
+                    {
+                        Console.Write(massivb[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
 
+            }
+            void n9()
+            {
+                obchee.SozdanieKvadratnogoMassiva(out int Razryd);
+                //============
+                //int Razryd = 4;
+                int[,] Matrica = new int[Razryd, Razryd];
+                Random random = new Random();
+                List<int> Otriz = new List<int>();
+                List<int> Chetn = new List<int>();
+                List<int> Nechetn = new List<int>();
+                Console.WriteLine($"Двумерный массив {Razryd}x{Razryd}");
+                for (int i = 0; i < Razryd; i++)
+                {
+                    for (int j = 0; j < Razryd; j++)
+                    {
+                        Matrica[i, j] = random.Next(-10, 10);
+                        Console.Write(Matrica[i, j] + "\t");
+                        if (Matrica[i, j] < 0)
+                            Otriz.Add(Matrica[i, j]);
+                        if (Matrica[i, j] % 2 == 0 && Matrica[i, j] != 0)
+                            Chetn.Add(Matrica[i, j]);
+                        else if (Matrica[i, j] != 0)
+                            Nechetn.Add(Matrica[i, j]);
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine("Все отрицательные элементы: " + string.Join(", ", Otriz.ToArray()));
+                Console.WriteLine("Все четные элементы: " + string.Join(", ", Chetn.ToArray()));
+                Console.WriteLine("Все нечетные элементы: " + string.Join(", ", Nechetn.ToArray()));
+            }
         }
     }
 }
