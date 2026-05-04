@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 
 namespace Stroki
 {
@@ -6,19 +6,19 @@ namespace Stroki
     {
         public void TipoMain()
         {
-            Console.WriteLine("Работа с символами строки");
+            Console.WriteLine("Р Р°Р±РѕС‚Р° СЃ СЃРёРјРІРѕР»Р°РјРё СЃС‚СЂРѕРєРё");
             byte NomerZadaniy; bool NomerZadaniyOut;
             bool OutZadanie = true;
             do
             {
-                Console.Write("Введите номер задания: ");
+                Console.Write("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ: ");
                 NomerZadaniy = 1; NomerZadaniyOut = true;
                 while (NomerZadaniyOut)
                 {
                     if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
-                        Console.Write("Ошибка! Введите номер задания еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");
                     /*else if (NomerZadaniy <= 0 || NomerZadaniy > 6)
-                        Console.Write("В дз всего 6 заданий, Введите номер задания еще раз ");*/
+                        Console.Write("Р’ РґР· РІСЃРµРіРѕ 6 Р·Р°РґР°РЅРёР№, Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");*/
                     else
                         NomerZadaniyOut = false;
 
@@ -41,7 +41,7 @@ namespace Stroki
                     case 13: n13(); break;
                     case 14: n14(); break;
                     default:
-                        Console.WriteLine("Пока что не готов этот номер");
+                        Console.WriteLine("РџРѕРєР° С‡С‚Рѕ РЅРµ РіРѕС‚РѕРІ СЌС‚РѕС‚ РЅРѕРјРµСЂ");
                         break;
                 }
                 do
@@ -58,69 +58,69 @@ namespace Stroki
             while (OutZadanie);
             void n1()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 3)
-                        Console.Write("Слово должно состоять из не менее 3-х букв. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 3-С… Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
-                Console.WriteLine("Третий символ в слове: " + Slovo[2]);
+                Console.WriteLine("РўСЂРµС‚РёР№ СЃРёРјРІРѕР» РІ СЃР»РѕРІРµ: " + Slovo[2]);
 
             }
             void n2()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 1)
-                        Console.Write("Слово должно состоять из не менее 1-й буквы. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
-                Console.WriteLine("Последний символ в слове: " + Slovo[Slovo.Length-1]);
+                Console.WriteLine("РџРѕСЃР»РµРґРЅРёР№ СЃРёРјРІРѕР» РІ СЃР»РѕРІРµ: " + Slovo[Slovo.Length-1]);
             }
             void n3()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 1)
-                        Console.Write("Слово должно состоять из не менее 1-й буквы. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Вывести на экран k-й символ ");
-                Console.Write("Введите k ");
+                Console.WriteLine("Р’С‹РІРµСЃС‚Рё РЅР° СЌРєСЂР°РЅ k-Р№ СЃРёРјРІРѕР» ");
+                Console.Write("Р’РІРµРґРёС‚Рµ k ");
                 int k;
                 while (true)
                 {
                     if (!int.TryParse(Console.ReadLine(), out k))
-                        Console.Write("Ошибка! Введите k еще раз ");
+                        Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ k РµС‰Рµ СЂР°Р· ");
                     else if (k <= 0 || k > Slovo.Length)
-                        Console.Write($"k должна быть положительной и меньше чем кол-во символов в слове  ({Slovo.Length}). Введите k еще раз ");
+                        Console.Write($"k РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ Рё РјРµРЅСЊС€Рµ С‡РµРј РєРѕР»-РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЃР»РѕРІРµ  ({Slovo.Length}). Р’РІРµРґРёС‚Рµ k РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
-                Console.WriteLine("k-й символ в слове: " + Slovo[k - 1]);
+                Console.WriteLine("k-Р№ СЃРёРјРІРѕР» РІ СЃР»РѕРІРµ: " + Slovo[k - 1]);
             }
             void n4()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 4)
-                        Console.Write("Слово должно состоять из не менее 4-х букв. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 4-С… Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
@@ -128,40 +128,40 @@ namespace Stroki
                 Slovo = Slovo.ToLower();
                 //Console.WriteLine(Slovo);
                 if (Slovo[1] == Slovo[3])
-                    Console.WriteLine("Второй и четвертый символы одинаковы");
+                    Console.WriteLine("Р’С‚РѕСЂРѕР№ Рё С‡РµС‚РІРµСЂС‚С‹Р№ СЃРёРјРІРѕР»С‹ РѕРґРёРЅР°РєРѕРІС‹");
                 else
-                    Console.WriteLine("Второй и четвертый символы не одинаковы");
+                    Console.WriteLine("Р’С‚РѕСЂРѕР№ Рё С‡РµС‚РІРµСЂС‚С‹Р№ СЃРёРјРІРѕР»С‹ РЅРµ РѕРґРёРЅР°РєРѕРІС‹");
             }
             void n5()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 1)
-                        Console.Write("Слово должно состоять из не менее 1-й буквы. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
                 Slovo = Slovo.ToLower();
                 if (Slovo[0] == Slovo[Slovo.Length - 1])
-                    Console.WriteLine("Слово начинается и заканчивается на одну и ту же букву");
+                    Console.WriteLine("РЎР»РѕРІРѕ РЅР°С‡РёРЅР°РµС‚СЃСЏ Рё Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ РЅР° РѕРґРЅСѓ Рё С‚Сѓ Р¶Рµ Р±СѓРєРІСѓ");
                 else
-                    Console.WriteLine("Слово не начинается и не заканчивается на одну и ту же букву");
+                    Console.WriteLine("РЎР»РѕРІРѕ РЅРµ РЅР°С‡РёРЅР°РµС‚СЃСЏ Рё РЅРµ Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ РЅР° РѕРґРЅСѓ Рё С‚Сѓ Р¶Рµ Р±СѓРєРІСѓ");
             }
             void n6()
             {
                 string VvodSlov(int NomerSlova)
                 {
-                    Console.Write($"Введите {NomerSlova}-e слово ") ;
+                    Console.Write($"Р’РІРµРґРёС‚Рµ {NomerSlova}-e СЃР»РѕРІРѕ ") ;
                     string Slovo;
                     while (true)
                     {
                         Slovo = Console.ReadLine();
                         if (Slovo.Length < 1)
-                            Console.Write("Слово должно состоять из не менее 1-й буквы. Введите слово еще раз ");
+                            Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                         else
                             break;
                     }
@@ -172,121 +172,122 @@ namespace Stroki
                 string Slovo1 = VvodSlov(1);
                 string Slovo2 = VvodSlov(2);
                 if (Slovo1[0] == Slovo2[Slovo2.Length - 1])
-                    Console.WriteLine("Верно, первое слово начинается на ту же букву, на которую заканчивается второе");
+                    Console.WriteLine("Р’РµСЂРЅРѕ, РїРµСЂРІРѕРµ СЃР»РѕРІРѕ РЅР°С‡РёРЅР°РµС‚СЃСЏ РЅР° С‚Сѓ Р¶Рµ Р±СѓРєРІСѓ, РЅР° РєРѕС‚РѕСЂСѓСЋ Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ РІС‚РѕСЂРѕРµ");
                 else
-                    Console.WriteLine("Не верно, первое слово не начинается на ту же букву, на которую заканчивается второе");
+                    Console.WriteLine("РќРµ РІРµСЂРЅРѕ, РїРµСЂРІРѕРµ СЃР»РѕРІРѕ РЅРµ РЅР°С‡РёРЅР°РµС‚СЃСЏ РЅР° С‚Сѓ Р¶Рµ Р±СѓРєРІСѓ, РЅР° РєРѕС‚РѕСЂСѓСЋ Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ РІС‚РѕСЂРѕРµ");
             }
             void n7()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 4)
-                        Console.Write("Слово должно состоять из не менее 4-х букв. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 4-С… Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Буквосочетание из 2-го и 4-го символов: " + Slovo[1] + Slovo[3]);
+                Console.WriteLine("Р‘СѓРєРІРѕСЃРѕС‡РµС‚Р°РЅРёРµ РёР· 2-РіРѕ Рё 4-РіРѕ СЃРёРјРІРѕР»РѕРІ: " + Slovo[1] + Slovo[3]);
             }
             void n8()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 3)
-                        Console.Write("Слово должно состоять из не менее 3-х букв. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 3-С… Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Буквосочетание из 3-го и последнего символов: " + Slovo[2] + Slovo[Slovo.Length-1]);
+                Console.WriteLine("Р‘СѓРєРІРѕСЃРѕС‡РµС‚Р°РЅРёРµ РёР· 3-РіРѕ Рё РїРѕСЃР»РµРґРЅРµРіРѕ СЃРёРјРІРѕР»РѕРІ: " + Slovo[2] + Slovo[Slovo.Length-1]);
             }
             void n9()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 4)
-                        Console.Write("Слово должно состоять из не менее 4-х букв. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 4-С… Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Часть слова из 2-го, 3-го и 4-го символов: " + Slovo[1] + Slovo[2] + Slovo[3]);
+                Console.WriteLine("Р§Р°СЃС‚СЊ СЃР»РѕРІР° РёР· 2-РіРѕ, 3-РіРѕ Рё 4-РіРѕ СЃРёРјРІРѕР»РѕРІ: " + Slovo[1] + Slovo[2] + Slovo[3]);
             }
             void n10()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length == 0 && Slovo.Length % 2 != 0)
-                        Console.Write("Слово должно состоять из не менее 1-й буквы и кол-во символов должно быть четным. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹ Рё РєРѕР»-РІРѕ СЃРёРјРІРѕР»РѕРІ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ С‡РµС‚РЅС‹Рј. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Первая половина слова: "+ Slovo.Substring(0, Slovo.Length / 2));
+                Console.WriteLine("РџРµСЂРІР°СЏ РїРѕР»РѕРІРёРЅР° СЃР»РѕРІР°: "+ Slovo.Substring(0, Slovo.Length / 2));
             }
             void n11()
             {
-                Console.Write("Введите слово ");
+                Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
                 string Slovo;
                 while (true)
                 {
                     Slovo = Console.ReadLine();
                     if (Slovo.Length < 1)
-                        Console.Write("Слово должно состоять из не менее 1-й буквы. Введите слово еще раз ");
+                        Console.Write("РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· РЅРµ РјРµРЅРµРµ 1-Р№ Р±СѓРєРІС‹. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
                     else
                         break;
                 }
                 //=============
-                Console.WriteLine("Получить часть слова, от m по n");
+                Console.WriteLine("РџРѕР»СѓС‡РёС‚СЊ С‡Р°СЃС‚СЊ СЃР»РѕРІР°, РѕС‚ m РїРѕ n");
                 
                 int m = VvodMN('m');
                 int n = VvodMN('n');
                 int  VvodMN(char var)
                 {
-                    Console.Write($"Введите {var} ");
+                    Console.Write($"Р’РІРµРґРёС‚Рµ {var} ");
                     int mn;
                     while (true)
                     {
                         if (!int.TryParse(Console.ReadLine(), out mn))
-                            Console.Write($"Ошибка! Введите {var} еще раз ");
+                            Console.Write($"РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ {var} РµС‰Рµ СЂР°Р· ");
                         else if (mn <= 0 || mn > Slovo.Length)
-                            Console.Write($"{var} не может быть отрицательным и больше кол-ва символов в строке ({Slovo.Length}). Введите {var} еще раз ");
+                            Console.Write($"{var} РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј Рё Р±РѕР»СЊС€Рµ РєРѕР»-РІР° СЃРёРјРІРѕР»РѕРІ РІ СЃС‚СЂРѕРєРµ ({Slovo.Length}). Р’РІРµРґРёС‚Рµ {var} РµС‰Рµ СЂР°Р· ");
                         else
                             break;
                     }
                     return mn;
                 }
-                Console.WriteLine("Часть слова, от m до n: " + Slovo.Substring(m-1, n - m + 1));
+                Console.WriteLine("Р§Р°СЃС‚СЊ СЃР»РѕРІР°, РѕС‚ m РґРѕ n: " + Slovo.Substring(m-1, n - m + 1));
             }
             void n12()
             {
-                string Abloko = "яблоко";
-                Console.WriteLine("Из яблоко в око: " + Abloko.Substring(3));
-                Console.WriteLine("Из яблоко в блок: " + Abloko.Substring(1, 4));
+                string Abloko = "СЏР±Р»РѕРєРѕ";
+                Console.WriteLine("РР· СЏР±Р»РѕРєРѕ РІ РѕРєРѕ: " + Abloko.Substring(3));
+                Console.WriteLine("РР· СЏР±Р»РѕРєРѕ РІ Р±Р»РѕРє: " + Abloko.Substring(1, 4));
             }
             void n13()
             {
-                string Abloko = "информатика";
-                Console.WriteLine("Из информатика в форма: " + Abloko.Substring(2, 5));
-                Console.WriteLine("Из информатика в тик: " + Abloko.Substring(7, 3));
+                string Abloko = "РёРЅС„РѕСЂРјР°С‚РёРєР°";
+                Console.WriteLine("РР· РёРЅС„РѕСЂРјР°С‚РёРєР° РІ С„РѕСЂРјР°: " + Abloko.Substring(2, 5));
+                Console.WriteLine("РР· РёРЅС„РѕСЂРјР°С‚РёРєР° РІ С‚РёРє: " + Abloko.Substring(7, 3));
             }
             void n14()
-            { 
-            
+            {
+                string Abloko = "РІРµСЂС‚РёРєР°Р»СЊ";
+                Console.WriteLine("РР· РІРµСЂС‚РёРєР°Р»СЊ РІ С‚РёСЂ: " + Abloko[3] + Abloko[4] + Abloko[2]);
+                Console.WriteLine("РР· РІРµСЂС‚РёРєР°Р»СЊ РІ РІРµС‚РєР°: " + Abloko[0] + Abloko[1] + Abloko[3] + Abloko[5] + Abloko[6]);
             }
-
         }
     }
 }

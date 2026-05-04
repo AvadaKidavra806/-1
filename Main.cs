@@ -13,7 +13,7 @@ namespace Main
             //RabotaSNeskolkimi.Dvumerniye mas = new RabotaSNeskolkimi.Dvumerniye(); mas.Massivami();
             //Zadaniy.For hgf = new Zadaniy.For(); hgf.TipoMain(); 
             //Stroki.Simvol simvol = new Stroki.Simvol(); simvol.TipoMain(); //дз по 14 
-            Obrabotka.Massiva massiva = new Obrabotka.Massiva(); massiva.TipoMain();
+            Obrabotka.Strok massiva = new Obrabotka.Strok(); massiva.TipoMain();
             Console.Write("Для завершения программы нажмите Enter"); 
             Console.ReadLine(); 
         }
