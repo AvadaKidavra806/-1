@@ -1,19 +1,15 @@
 ﻿using System;
 
-//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
 namespace Main
 {
     internal class ClaasMain
     {
         static void Main()
         {
-            //Черновик.Черновик черновик = new Черновик.Черновик(); черновик.Решение();
-            //ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov(); posle.DmumerMassiv();
-            //Rabota.KvadratMassiv massiv = new Rabota.KvadratMassiv(); massiv.DmumerMassiv();
-            //RabotaSNeskolkimi.Dvumerniye mas = new RabotaSNeskolkimi.Dvumerniye(); mas.Massivami();
-            //Zadaniy.For hgf = new Zadaniy.For(); hgf.TipoMain(); 
+            Zadaniy.For hgf = new Zadaniy.For(); hgf.TipoMain();  //тоже показать надо
             //Stroki.Simvol simvol = new Stroki.Simvol(); simvol.TipoMain(); //дз по 14 
-            Obrabotka.Strok massiva = new Obrabotka.Strok(); massiva.TipoMain();
+            //Nadoelo nadoelo = new Nadoelo(); nadoelo.TipoMain(); //дз по 15
+
             Console.Write("Для завершения программы нажмите Enter"); 
             Console.ReadLine(); 
         }

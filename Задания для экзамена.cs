@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace Zadaniy
 {
@@ -12,8 +11,7 @@ namespace Zadaniy
             Main.Obchee obchee = new Main.Obchee();
             Console.WriteLine("Задания для экзамена ");
             byte NomerZadaniy; bool NomerZadaniyOut;
-            bool OutZadanie = true;
-            do
+            while (true) 
             {
                 Console.Write("Введите номер задания: ");
                 NomerZadaniy = 1; NomerZadaniyOut = true;
@@ -21,13 +19,12 @@ namespace Zadaniy
                 {
                     if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
                         Console.Write("Ошибка! Введите номер задания еще раз ");
-                    /*else if (NomerZadaniy <= 0 || NomerZadaniy > 6)
-                        Console.Write("В дз всего 6 заданий, Введите номер задания еще раз ");*/
+                    else if (NomerZadaniy <= 0 || NomerZadaniy > 9)
+                        Console.Write("В дз всего 9 заданий, Введите номер задания еще раз ");
                     else
                         NomerZadaniyOut = false;
 
                 }
-                ConsoleKey Klavisha;
                 switch (NomerZadaniy)
                 {
                     case 1: n1(); break;
@@ -37,24 +34,23 @@ namespace Zadaniy
                     case 5: n5(); break;
                     case 6: n6(); break;
                     case 7: n7(); break;
-                case 8: n8(); break;
-                case 9: n9(); break;
+                    case 8: n8(); break;
+                    case 9: n9(); break;
                     default:
                         Console.WriteLine("Пока что не готов этот номер");
                         break;
                 }
+                ConsoleKey Klavisha;
                 do
                 {
                     Console.WriteLine("Y or N");
                     Klavisha = Console.ReadKey(true).Key;
                 }
                 while (Klavisha != ConsoleKey.Y && Klavisha != ConsoleKey.N);
-                if (Klavisha == ConsoleKey.Y)
-                    OutZadanie = true;
-                else if (Klavisha == ConsoleKey.N)
-                    OutZadanie = false;
+                if (Klavisha == ConsoleKey.N)
+                    break;
             }
-            while (OutZadanie);
+            
             void n1()
             {
                 bool UslovieStrok(int x)

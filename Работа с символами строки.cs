@@ -8,8 +8,7 @@ namespace Stroki
         {
             Console.WriteLine("Работа с символами строки");
             byte NomerZadaniy; bool NomerZadaniyOut;
-            bool OutZadanie = true;
-            do
+            while (true)
             {
                 Console.Write("Введите номер задания: ");
                 NomerZadaniy = 1; NomerZadaniyOut = true;
@@ -17,13 +16,12 @@ namespace Stroki
                 {
                     if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
                         Console.Write("Ошибка! Введите номер задания еще раз ");
-                    /*else if (NomerZadaniy <= 0 || NomerZadaniy > 6)
-                        Console.Write("В дз всего 6 заданий, Введите номер задания еще раз ");*/
+                    else if (NomerZadaniy <= 0 || NomerZadaniy > 9)
+                        Console.Write("В дз всего 9 заданий, Введите номер задания еще раз ");
                     else
                         NomerZadaniyOut = false;
 
                 }
-                ConsoleKey Klavisha;
                 switch (NomerZadaniy)
                 {
                     case 1: n1(); break;
@@ -44,18 +42,17 @@ namespace Stroki
                         Console.WriteLine("Пока что не готов этот номер");
                         break;
                 }
+                ConsoleKey Klavisha;
                 do
                 {
                     Console.WriteLine("Y or N");
                     Klavisha = Console.ReadKey(true).Key;
                 }
                 while (Klavisha != ConsoleKey.Y && Klavisha != ConsoleKey.N);
-                if (Klavisha == ConsoleKey.Y)
-                    OutZadanie = true;
-                else if (Klavisha == ConsoleKey.N)
-                    OutZadanie = false;
+                if (Klavisha == ConsoleKey.N)
+                    break;
             }
-            while (OutZadanie);
+
             void n1()
             {
                 Console.Write("Введите слово ");
