@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Задания для экзамена.cs" />
     <Compile Include="Изменение исходных строковых величин.cs" />
+    <Compile Include="Обработка цифр в строке.cs" />
     <Compile Include="Работа с символами строки.cs" />
   </ItemGroup>
   <ItemGroup>

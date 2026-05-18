@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Main
@@ -10,10 +12,12 @@ namespace Main
             //Zadaniy.For hgf = new Zadaniy.For(); hgf.TipoMain();  //тоже показать надо
             //Stroki.Simvol simvol = new Stroki.Simvol(); simvol.TipoMain(); //дз по 14 
             //Nadoelo nadoelo = new Nadoelo(); nadoelo.TipoMain(); //дз по 15
-            Vremynka vremynka = new Vremynka();  vremynka.n22();
+            //Vremynka vremynka = new Vremynka();  vremynka.n22();
+            ZifravStroke zifravStroke = new ZifravStroke(); zifravStroke.TipoMain();
+
 
             Console.Write("Для завершения программы нажмите Enter"); 
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
     }
     public class Obchee
