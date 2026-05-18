@@ -3,6 +3,7 @@ using System.Text;
 
 public class Nadoelo
 {
+    delegate bool Proverki(int x);
     public void TipoMain()
     {
         Console.WriteLine("Изменение исходных строковых величин ");
@@ -14,16 +15,16 @@ public class Nadoelo
             while (NomerZadaniyOut)
             {
                 if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
-                    Console.Write("Ошибка! Введите номер задания еще раз ");
+                    Console.Write("Ошибка! Введите номер задания еще раз ");/*
                 else if (NomerZadaniy <= 0 || NomerZadaniy > 15)
-                    Console.Write("В дз всего 15 заданий, Введите номер задания еще раз ");
+                    Console.Write("В дз всего 15 заданий, Введите номер задания еще раз ");*/
                 else
                     NomerZadaniyOut = false;
 
             }
             switch (NomerZadaniy)
             {
-                case 1: n1(); break;
+                /*case 1: n1(); break;
                 case 2: n2(); break;
                 case 3: n3(); break;
                 case 4: n4(); break;
@@ -35,9 +36,10 @@ public class Nadoelo
                 case 10: n10(); break;
                 case 11: n11(); break;
                 case 12: n12(); break;
-                case 13: n13(); break;
-                case 14: n14(); break;
-                case 15: n15(); break;
+                case 13: n13(); break;*/
+                //case 14: n14(); break;
+                // case 15: n15(); break;
+                case 20: n20(); break;
                 default:
                     Console.WriteLine("Пока что не готов этот номер");
                     break;
@@ -53,7 +55,8 @@ public class Nadoelo
                 break;
         }
 
-        void n1()
+        Proverki proverki;
+        /*void n1()
         {
             Console.Write("Введите предложение ");
             string predlosh = Console.ReadLine();
@@ -143,8 +146,9 @@ public class Nadoelo
         {
             Console.Write("Введите слово ");
             string slovostr;
-            while (Proverka()) ;
-            bool Proverka()
+            proverki = Proverka;
+            while (proverki(out slovostr, 5)) ;
+            /*bool Proverka()
             {
                 slovostr = Console.ReadLine().Trim();
                 if (slovostr.Length < 5)
@@ -162,16 +166,18 @@ public class Nadoelo
             }
             var slovo = new StringBuilder(slovostr);
             (slovo[1], slovo[4]) = (slovo[4], slovo[1]);
-            Console.WriteLine("Измененное слово:" + slovo); 
+            Console.WriteLine("Измененное слово:" + slovo);
         }
         void n12()
         {
-            Console.Write("Введите слово "); 
+            Console.Write("Введите слово ");
             string slovostr;
-            while (Proverka()) ;
+            proverki = Proverka;
+            while (proverki(out slovostr, 3)) ;
+            /*while (Proverka()) ;
             bool Proverka()
             {
-                slovostr = Console.ReadLine().Trim(); 
+                slovostr = Console.ReadLine().Trim();
                 if (slovostr.Length < 3)
                 {
                     Console.Write("Слово должно быть минимум из трех букв. Введите слово еще раз ");
@@ -186,14 +192,16 @@ public class Nadoelo
                     return false;
             }
             var slovo = new StringBuilder(slovostr);
-            (slovo[2], slovo[slovo.Length-1]) = (slovo[slovo.Length-1], slovo[2]);
+            (slovo[2], slovo[slovo.Length - 1]) = (slovo[slovo.Length - 1], slovo[2]);
             Console.WriteLine("Измененное слово:" + slovo);
         }
         void n13()
         {
             Console.Write("Введите слово ");
             string slovostr;
-            while (Proverka()) ;
+            proverki = Proverka;
+            while (proverki(out slovostr, 1)) ;
+            /*while (Proverka()) ;
             bool Proverka()
             {
                 slovostr = Console.ReadLine().Trim();
@@ -205,6 +213,125 @@ public class Nadoelo
                 else if (slovostr.Split(new char[] { ' ' }).Length != 1)
                 {
                     Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
+                    return true;
+                }
+                else
+                    return false;
+            }
+            
+            int m = ZaprosNomeraBukvu("m");
+            int n = ZaprosNomeraBukvu("n");
+            var slovo = new StringBuilder(slovostr);
+            (slovo[m - 1], slovo[n - 1]) = (slovo[n - 1], slovo[m - 1]);
+            Console.WriteLine("Измененное слово:" + slovo);
+        }*/
+        //================
+
+        string slovostr = " ";
+            void n14()
+            {
+                Console.Write("Введите слово ");
+                proverki = Proverka;
+                proverki += ProverkaChet;
+                while (proverki(1)) ;
+                /*while (Proverka()) ;
+                bool Proverka()
+                {
+                    slovostr = Console.ReadLine().Trim();
+                    if (slovostr.Length < 1)
+                    {
+                        Console.Write("Слово должно быть минимум одной буквы. Введите слово еще раз ");
+                        return true;
+                    }
+                    else if (slovostr.Split(new char[] { ' ' }).Length != 1)
+                    {
+                        Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
+                        return true;
+                    }
+                    else if (slovostr.Length % 2 != 0)
+                    {
+                        Console.Write("введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
+                        return true;
+                    }
+                    else
+                        return false;
+                }*/
+                var slovo = new StringBuilder(slovostr);
+                for (int i = 0; i < slovo.Length; i += 2)
+                {
+                    (slovo[i], slovo[i + 1]) = (slovo[i + 1], slovo[i]);
+                }
+                Console.WriteLine("Измененное слово:" + slovo);
+            }
+            void n15()
+            {
+                Console.Write("Введите слово ");
+
+
+            
+            proverki = Proverka;
+            proverki += ProverkaChet;
+            while (proverki(1)) ;
+            /*while (Proverka()) ;
+                bool Proverka()
+                {
+                    slovostr = Console.ReadLine().Trim();
+                    if (slovostr.Length < 1)
+                    {
+                        Console.Write("Слово должно быть минимум одной буквы. Введите слово еще раз ");
+                        return true;
+                    }
+                    else if (slovostr.Split(new char[] { ' ' }).Length != 1)
+                    {
+                        Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
+                        return true;
+                    }
+                    else if (slovostr.Length % 2 != 0)
+                    {
+                        Console.Write("введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
+                        return true;
+                    }
+                    else
+                        return false;
+                }*/
+                var slovo = new StringBuilder(slovostr);
+                for (int i = 0; i < slovo.Length / 2; i++)
+                {
+                    (slovo[i], slovo[slovo.Length - 1 - i]) = (slovo[slovo.Length - 1 - i], slovo[i]);
+                }
+                Console.WriteLine("Измененное слово:" + slovo);
+            }
+            void n20()
+            {
+                Console.Write("Введите слово ");
+            }
+            bool Proverka(int minbukv = 1)
+            {
+                slovostr = Console.ReadLine().Trim();
+                if (slovostr.Length < minbukv)
+                {
+                    Console.Write($"Слово должно быть минимум из {minbukv} букв. Введите слово еще раз ");
+                    return true;
+                }
+                else if (slovostr.Split(new char[] { ' ' }).Length != 1)
+                {
+                    Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
+                    return true;
+                }
+                /*else if (slovostr.Length % 2 != 0)
+                {
+                    Console.Write("Введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
+                    return true;
+                }*/
+                else
+                    return false;
+
+            }
+            bool ProverkaChet( int minbukv = 1)
+            {
+                if (slovostr.Length % 2 != 0)
+                {
+                    Console.Write("Введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
                     return true;
                 }
                 else
@@ -226,77 +353,6 @@ public class Nadoelo
                 }
                 return NomerBukvu;
             }
-            int m = ZaprosNomeraBukvu("m");
-            int n = ZaprosNomeraBukvu("n");
-            var slovo = new StringBuilder(slovostr);
-            (slovo[m-1], slovo[n - 1]) = (slovo[n - 1], slovo[m-1]);
-            Console.WriteLine("Измененное слово:" + slovo);
-        }
-        void n14()
-        {
-            Console.Write("Введите слово ");
-            string slovostr;
-            while (Proverka()) ;
-            bool Proverka()
-            {
-                slovostr = Console.ReadLine().Trim();
-                if (slovostr.Length < 1)
-                {
-                    Console.Write("Слово должно быть минимум одной буквы. Введите слово еще раз ");
-                    return true;
-                }
-                else if (slovostr.Split(new char[] { ' ' }).Length != 1)
-                {
-                    Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
-                    return true;
-                }
-                else if (slovostr.Length % 2 != 0)
-                {
-                    Console.Write("введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
-                    return true;
-                }
-                else
-                    return false;
-            }
-            var slovo = new StringBuilder(slovostr);
-            for (int i = 0; i < slovo.Length; i+=2)
-            {
-                (slovo[i], slovo[i + 1]) = (slovo[i + 1], slovo[i]);
-            }
-            Console.WriteLine("Измененное слово:" + slovo);
-        }
-        void n15()
-        {
-            Console.Write("Введите слово ");
-            string slovostr;
-            while (Proverka()) ;
-            bool Proverka()
-            {
-                slovostr = Console.ReadLine().Trim();
-                if (slovostr.Length < 1)
-                {
-                    Console.Write("Слово должно быть минимум одной буквы. Введите слово еще раз ");
-                    return true;
-                }
-                else if (slovostr.Split(new char[] { ' ' }).Length != 1)
-                {
-                    Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
-                    return true;
-                }
-                else if (slovostr.Length % 2 != 0)
-                {
-                    Console.Write("введенное слово содержит нечетное кол-во букв. Введите слово еще раз ");
-                    return true;
-                }
-                else
-                    return false;
-            }
-            var slovo = new StringBuilder(slovostr);
-            for (int i = 0; i < slovo.Length/2; i ++)
-            {
-                (slovo[i], slovo[slovo.Length-1-i]) = (slovo[slovo.Length-1-i], slovo[i]);
-            }
-            Console.WriteLine("Измененное слово:" + slovo);
-        }
+        
     }
 }
