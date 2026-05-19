@@ -4,6 +4,8 @@ using System.Text;
 public class Nadoelo
 {
     delegate bool Proverki(int x);
+    string slovostr = " ";
+
     public void TipoMain()
     {
         Console.WriteLine("Изменение исходных строковых величин ");
@@ -24,7 +26,7 @@ public class Nadoelo
             }
             switch (NomerZadaniy)
             {
-                /*case 1: n1(); break;
+                case 1: n1(); break;
                 case 2: n2(); break;
                 case 3: n3(); break;
                 case 4: n4(); break;
@@ -36,9 +38,9 @@ public class Nadoelo
                 case 10: n10(); break;
                 case 11: n11(); break;
                 case 12: n12(); break;
-                case 13: n13(); break;*/
-                //case 14: n14(); break;
-                // case 15: n15(); break;
+                case 13: n13(); break;
+                case 14: n14(); break;
+                case 15: n15(); break;
                 case 20: n20(); break;
                 default:
                     Console.WriteLine("Пока что не готов этот номер");
@@ -56,7 +58,7 @@ public class Nadoelo
         }
 
         Proverki proverki;
-        /*void n1()
+        void n1()
         {
             Console.Write("Введите предложение ");
             string predlosh = Console.ReadLine();
@@ -145,9 +147,9 @@ public class Nadoelo
         void n11()
         {
             Console.Write("Введите слово ");
-            string slovostr;
+            //string slovostr;
             proverki = Proverka;
-            while (proverki(out slovostr, 5)) ;
+            while (proverki(5)) ;
             /*bool Proverka()
             {
                 slovostr = Console.ReadLine().Trim();
@@ -163,7 +165,7 @@ public class Nadoelo
                 }
                 else
                     return false;
-            }
+            }*/
             var slovo = new StringBuilder(slovostr);
             (slovo[1], slovo[4]) = (slovo[4], slovo[1]);
             Console.WriteLine("Измененное слово:" + slovo);
@@ -171,9 +173,9 @@ public class Nadoelo
         void n12()
         {
             Console.Write("Введите слово ");
-            string slovostr;
+            //string slovostr;
             proverki = Proverka;
-            while (proverki(out slovostr, 3)) ;
+            while (proverki( 3)) ;
             /*while (Proverka()) ;
             bool Proverka()
             {
@@ -190,7 +192,7 @@ public class Nadoelo
                 }
                 else
                     return false;
-            }
+            }*/
             var slovo = new StringBuilder(slovostr);
             (slovo[2], slovo[slovo.Length - 1]) = (slovo[slovo.Length - 1], slovo[2]);
             Console.WriteLine("Измененное слово:" + slovo);
@@ -198,9 +200,9 @@ public class Nadoelo
         void n13()
         {
             Console.Write("Введите слово ");
-            string slovostr;
+            //string slovostr;
             proverki = Proverka;
-            while (proverki(out slovostr, 1)) ;
+            while (proverki(1)) ;
             /*while (Proverka()) ;
             bool Proverka()
             {
@@ -217,17 +219,17 @@ public class Nadoelo
                 }
                 else
                     return false;
-            }
+            }*/
             
             int m = ZaprosNomeraBukvu("m");
             int n = ZaprosNomeraBukvu("n");
             var slovo = new StringBuilder(slovostr);
             (slovo[m - 1], slovo[n - 1]) = (slovo[n - 1], slovo[m - 1]);
             Console.WriteLine("Измененное слово:" + slovo);
-        }*/
+        }
         //================
 
-        string slovostr = " ";
+        
             void n14()
             {
                 Console.Write("Введите слово ");
