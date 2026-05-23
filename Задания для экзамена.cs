@@ -41,9 +41,9 @@ namespace Zadaniy
                         break;
                 }
                 ConsoleKey Klavisha;
+                Console.WriteLine("Для выбора след задания нажмите Y, Для завершения программы N (Y or N)");
                 do
                 {
-                    Console.WriteLine("Y or N");
                     Klavisha = Console.ReadKey(true).Key;
                 }
                 while (Klavisha != ConsoleKey.Y && Klavisha != ConsoleKey.N);
