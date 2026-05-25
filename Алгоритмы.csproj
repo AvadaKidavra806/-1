@@ -49,6 +49,7 @@
     <Compile Include="Изменение исходных строковых величин.cs" />
     <Compile Include="Обработка цифр в строке.cs" />
     <Compile Include="Работа с символами строки.cs" />
+    <Compile Include="Работа со строками.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

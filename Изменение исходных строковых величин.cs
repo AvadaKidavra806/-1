@@ -366,7 +366,6 @@ public class Nadoelo
         }
         string UdalenieNeskolkihBukv(int[] NomeraBukv)
         {
-            var slovo1 = new StringBuilder(slovostr);
             string Slovo = string.Empty;
             int hellp = 0;
             for (int i = 0; i < NomeraBukv.Length; i++)
