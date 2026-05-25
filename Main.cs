@@ -10,8 +10,8 @@ namespace Main
             //Stroki.Simvol simvol = new Stroki.Simvol(); simvol.TipoMain(); //дз по 14 
             //Nadoelo nadoelo = new Nadoelo(); nadoelo.TipoMain(); //дз по 15 и по 26
             //ZifravStroke zifravStroke = new ZifravStroke(); zifravStroke.TipoMain();
-            Rabota_So_Strokami rabota = new Rabota_So_Strokami(); rabota.TipoMain();
-
+            //Rabota_So_Strokami rabota = new Rabota_So_Strokami(); rabota.TipoMain();
+            Metodu org = new Metodu(); org.Artem();
             Console.Write("Для завершения программы нажмите Enter"); 
             Console.ReadLine();
         }

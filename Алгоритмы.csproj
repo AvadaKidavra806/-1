@@ -48,6 +48,7 @@
     <Compile Include="Задания для экзамена.cs" />
     <Compile Include="Изменение исходных строковых величин.cs" />
     <Compile Include="Обработка цифр в строке.cs" />
+    <Compile Include="Организация процедур методов.cs" />
     <Compile Include="Работа с символами строки.cs" />
     <Compile Include="Работа со строками.cs" />
   </ItemGroup>
