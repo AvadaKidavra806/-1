@@ -1,5 +1,7 @@
-using System;
+п»їusing System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 public class Rabota_So_Strokami
@@ -7,41 +9,41 @@ public class Rabota_So_Strokami
     string slovostr = string.Empty;
     public void TipoMain()
     {
-        Console.WriteLine("Итоговая работа со строками ");
+        Console.WriteLine("РС‚РѕРіРѕРІР°СЏ СЂР°Р±РѕС‚Р° СЃРѕ СЃС‚СЂРѕРєР°РјРё ");
         byte NomerZadaniy; bool NomerZadaniyOut;
         while (true)
         {
-            Console.Write("Введите номер задания: ");
+            Console.Write("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ: ");
             NomerZadaniy = 1; NomerZadaniyOut = true;
             while (NomerZadaniyOut)
             {
                 if (!byte.TryParse(Console.ReadLine(), out NomerZadaniy) || NomerZadaniy <= 0)
-                    Console.Write("Ошибка! Введите номер задания еще раз ");/*
+                    Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");/*
                 else if (NomerZadaniy <= 0 || NomerZadaniy > 15)
-                    Console.Write("В дз всего 15 заданий, Введите номер задания еще раз ");*/
+                    Console.Write("Р’ РґР· РІСЃРµРіРѕ 15 Р·Р°РґР°РЅРёР№, Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РµС‰Рµ СЂР°Р· ");*/
                 else
                     NomerZadaniyOut = false;
 
             }
             switch (NomerZadaniy)
             {
-                case 1: n1(); break;//доделaть
+                case 1: n1(); break;//РЅРµ СЃРґРµР»Р°РЅРѕ
                 case 2: n2(); break;
                 case 3: n3(); break;
                 case 4: n4(); break;
                 case 5: n5(); break;
-                case 6: n6(); break;/*
+                case 6: n6(); break;
                 case 7: n7(); break;
-                case 8: n8(); break;*/
+                case 8: n8(); break;
                 case 9: n9(); break;
-                case 10: n10(); break;/*
-                case 11: n11(); break;*/
+                case 10: n10(); break;
+                case 11: n11(); break;
                 default:
-                    Console.WriteLine("Пока что не готов этот номер");
+                    Console.WriteLine("РџРѕРєР° С‡С‚Рѕ РЅРµ РіРѕС‚РѕРІ СЌС‚РѕС‚ РЅРѕРјРµСЂ");
                     break;
             }
             ConsoleKey Klavisha;
-            Console.WriteLine("Для выбора след задания нажмите Y, Для завершения программы N (Y or N)");
+            Console.WriteLine("Р”Р»СЏ РІС‹Р±РѕСЂР° СЃР»РµРґ Р·Р°РґР°РЅРёСЏ РЅР°Р¶РјРёС‚Рµ Y, Р”Р»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ N (Y or N)");
             do
             {
                 Klavisha = Console.ReadKey(true).Key;
@@ -50,209 +52,349 @@ public class Rabota_So_Strokami
             if (Klavisha == ConsoleKey.N)
                 break;
         }
-        void n1() 
+    }
+    void n1()
+    {
+        const int Kolvoslov = 3;
+        string VvodSlov(int nomerslova)
         {
-            var Slovo1 = VvodSlov(1);
-            var Slovo2 = VvodSlov(2);
-            var Slovo3 = VvodSlov(3);
-            string VvodSlov(int nomerslova)
-            {
-                Console.Write($"Введите {nomerslova}-е слово ");
-                while (ProverkaVvodaSlova()) ;
-                return slovostr;
-            }
-            //int[] dlinuslov = new int[] { Slovo1.Length, Slovo2.Length, Slovo3.Length };
-            int Dlina1 = Slovo1.Length;
-            int Dlina2 = Slovo2.Length;
-            int Dlina3 = Slovo3.Length;
-
-            if (Dlina1 == Dlina2 && Dlina2 == Dlina3)
-                Console.WriteLine("Все слова одинаковой длины");
-            else
-            {
-                if (Dlina1 < Dlina2 || Dlina1 < Dlina3)
-                {
-                    if (Dlina1 < Dlina2 && Dlina1 < Dlina3)
-                    {
-                        if (Dlina2 < Dlina3)
-                        {
-                            Console.WriteLine($"Самое короткое слово: {Slovo1}");
-                            Console.WriteLine($"Самое длинное слово: {Slovo3}");
-                        }
-                    }
-                    else if (Dlina2 < Dlina3)
-                        Console.WriteLine($"Самое короткое слово: {Slovo2}");
-                    else
-                        Console.WriteLine($"Самое короткое слово: {Slovo3}");
-                }
-            } //чем гуще лес, ох зря я туда полез
-        }
-        void n2()
-        {
-            Console.WriteLine("Дано слово. Вывести на экран его k-й символ. Переставить первые три и последние три буквы, сохранив порядок их следования.");
-            Console.Write("Введите слово ");
-            while (ProverkaVvodaSlova(3)) ;
-            int k = ZaprosNomeraBukvu("k");
-            Console.WriteLine($"k-й символ слова: {slovostr[k - 1]}");
-            var SlovoSB = new StringBuilder(slovostr);
-            for (int i = 0; i < 3; i++)
-            {
-                (SlovoSB[i], SlovoSB[SlovoSB.Length - 3 + i]) = (SlovoSB[SlovoSB.Length - 3 + i], SlovoSB[i]);
-            }
-            Console.WriteLine("Измененное слово: " + SlovoSB);
-        }
-        void n3()
-        {
-            Console.WriteLine("Дано предложение. Определить долю (в %) букв а в нем");
-            Console.Write("Введите предложение "); 
-            while (ProverkaVvodaPredlosh()) ;
-            slovostr = slovostr.ToLower();
-            double countbukv = 0;
-            char bukva = 'а';
-            for (int i = 0; i < slovostr.Length; i++)
-            {
-                if (slovostr[i] == bukva)
-                    countbukv++;
-            }
-            Console.WriteLine($"Доля букв {bukva} в процентах: " + countbukv /slovostr.Length  * 100);
-        }
-        void n4()
-        {
-            Console.WriteLine("Дано предложение. Определить порядковые номера первой пары одинаковых соседних символов. Если таких символов нет, то вывеси соотетствующее сообщение");
-            Console.Write("Введите предложение "); //проверку написать
-            while (ProverkaVvodaPredlosh()) ;
-            bool indekator = true;
-            for (int i = 0; i < slovostr.Length-1; i++)
-            {
-                if (slovostr[i] == slovostr[i + 1])
-                {
-                    Console.WriteLine("Номера первых одинаковых символов: " + (i + 1) + ", " + (i + 2));
-                    indekator = false;
-                    break;
-                }
-            }
-            if (indekator)
-            Console.WriteLine("В предложении нет соседних одинаковых символов");
-        }
-        void n5()
-        {
-            Console.WriteLine("Дано предложение. Все символы на нечетных местах поменять на \"_\"");
-            Console.Write("Введите предложение ");
-            while (ProverkaVvodaPredlosh()) ;
-            var Predlosh = new StringBuilder(slovostr);
-            for (int i = 0; i < Predlosh.Length; i+=2)
-            {
-                    Predlosh[i] = '_';
-            }
-            Console.WriteLine("Измененное предложение: " + Predlosh);
-        }
-        void n6()
-        {
-            Console.WriteLine("Дано предложение. Удалить из него все символы с n1-го по n2-й");
-            Console.Write("Введите предложение ");
-            while (ProverkaVvodaPredlosh()) ;
-            var N1 = ZaprosNomeraBukvu("n1");
-            var N2 = ZaprosNomeraBukvu("n2");
-            var NomeraBukv = new int[N2 - N1 + 1];
-            for (int i = 0; i < NomeraBukv.Length; i++)
-            {
-                NomeraBukv[i] = N1 + i;
-            }
-            Array.Sort(NomeraBukv);
-            Console.WriteLine("Измененное слово: " + UdalenieNeskolkihBukv(NomeraBukv));
-        }
-        void n9()
-        {
-            var Slovo1 = VvodSlov(1);
-            var Slovo2 = VvodSlov(2);
-            string VvodSlov(int nomerslova)
-            {
-                Console.Write($"Введите {nomerslova}-е слово ");
-                while (ProverkaVvodaSlova()) ;
-                return slovostr;
-            }
-            char[] Bukvu1 = Slovo1.ToCharArray();
-            bool indikator = false;
-            for (int i = 0; i < Slovo2.Length; i++) //нужно както получить индекс буквы, которую использовалит для сравнения
-            {
-                if (Array.Exists(Bukvu1, f => f == Slovo2[i]))
-                {
-                    Bukvu1[i] = '0';
-                }
-                else
-                    indikator = true;
-            }
-            if (indikator)
-                Console.WriteLine("Нельзя");
-            else
-                Console.WriteLine("Можно");
-        }
-        void n10()
-        {
-            Console.WriteLine("Дано слово. Определить сколько различных букв в нем ");
-            Console.Write("Введите слово ");
+            Console.Write($"Р’РІРµРґРёС‚Рµ {nomerslova}-Рµ СЃР»РѕРІРѕ ");
             while (ProverkaVvodaSlova()) ;
-            string UnikSlovo = string.Concat(slovostr.Distinct());
-            Console.WriteLine("Различных букв: " + UnikSlovo.Length);
+            return slovostr;
         }
-        //=======================
-        bool ProverkaVvodaPredlosh()
+        var Slova = new string[Kolvoslov];
+        var DlinuSlov = new int[Kolvoslov];
+        for (int i = 0; i < Slova.Length; i++)
         {
-            slovostr = Console.ReadLine().Trim();
-            if (slovostr.Length == 0)
-            {
-                Console.Write("В предложении должно быть минимум одно слово. Введите предложение еще раз ");
-                return true;
-            }
-            else
-                return false;
+            Slova[i] = VvodSlov(i + 1);
+            DlinuSlov[i] = Slova[i].Length;
         }
-        bool ProverkaVvodaSlova(int minbukv = 1)
+        for (int i = 0; i < Kolvoslov; i++)
         {
-            slovostr = Console.ReadLine().Trim();
-            if (slovostr.Length < minbukv)
+            for (int j = i + 1; j < Kolvoslov; j++)
             {
-                Console.Write($"Слово должно быть минимум из {minbukv} букв. Введите слово еще раз ");
-                return true;
+                if (DlinuSlov[i] < DlinuSlov[j])
+                {
+                    (DlinuSlov[i], DlinuSlov[j]) = (DlinuSlov[j], DlinuSlov[i]);
+                    (Slova[i], Slova[j]) = (Slova[j], Slova[i]);
+                }
             }
-            else if (slovostr.Split(new char[] { ' ' }).Length != 1)
-            {
-                Console.Write("Введенное значение состоит не из одного слова. Введите слово еще раз ");
-                return true;
-            }
-            else
-                return false;
+        }
+        //Console.WriteLine("РЎР»РѕРІР°: " + string.Join(", ", Slova));
+        var BigSlova = new List<string>();
+        int y = 0;
+        while (DlinuSlov[y] == DlinuSlov[y + 1] && y < Kolvoslov)
+        {
+            BigSlova.Add(Slova[y + 1]);
+        }
+        var SmalSlova = new List<string>();
+        /*for (int i = 0; i < Kolvoslov; i++)
+        { 
+        if ()
+        }*/
 
-        }
-        int ZaprosNomeraBukvu(string name)
+        // int[] dlinuslov = new int[] { Slovo1.Length, Slovo2.Length, Slovo3.Length };
+
+        /* if (Dlina1 == Dlina2 && Dlina2 == Dlina3)
+             Console.WriteLine("Р’СЃРµ СЃР»РѕРІР° РѕРґРёРЅР°РєРѕРІРѕР№ РґР»РёРЅС‹");
+         else
+         {
+             if (Dlina1 < Dlina2 || Dlina1 < Dlina3)
+             {
+                 if (Dlina1 < Dlina2 && Dlina1 < Dlina3)
+                 {
+                     if (Dlina2 < Dlina3)
+                     {
+                         Console.WriteLine($"РЎР°РјРѕРµ РєРѕСЂРѕС‚РєРѕРµ СЃР»РѕРІРѕ: {Slovo1}");
+                         Console.WriteLine($"РЎР°РјРѕРµ РґР»РёРЅРЅРѕРµ СЃР»РѕРІРѕ: {Slovo3}");
+                     }
+                 }
+                 else if (Dlina2 < Dlina3)
+                     Console.WriteLine($"РЎР°РјРѕРµ РєРѕСЂРѕС‚РєРѕРµ СЃР»РѕРІРѕ: {Slovo2}");
+                 else
+                     Console.WriteLine($"РЎР°РјРѕРµ РєРѕСЂРѕС‚РєРѕРµ СЃР»РѕРІРѕ: {Slovo3}");
+             }
+         } //С‡РµРј РіСѓС‰Рµ Р»РµСЃ, РѕС… Р·СЂСЏ СЏ С‚СѓРґР° РїРѕР»РµР·*/
+    }
+    void n2()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ СЃР»РѕРІРѕ. Р’С‹РІРµСЃС‚Рё РЅР° СЌРєСЂР°РЅ РµРіРѕ k-Р№ СЃРёРјРІРѕР». РџРµСЂРµСЃС‚Р°РІРёС‚СЊ РїРµСЂРІС‹Рµ С‚СЂРё Рё РїРѕСЃР»РµРґРЅРёРµ С‚СЂРё Р±СѓРєРІС‹, СЃРѕС…СЂР°РЅРёРІ РїРѕСЂСЏРґРѕРє РёС… СЃР»РµРґРѕРІР°РЅРёСЏ.");
+        Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
+        while (ProverkaVvodaSlova(3)) ;
+        int k = ZaprosNomeraBukvu("k");
+        Console.WriteLine($"k-Р№ СЃРёРјРІРѕР» СЃР»РѕРІР°: {slovostr[k - 1]}");
+        var SlovoSB = new StringBuilder(slovostr);
+        for (int i = 0; i < 3; i++)
         {
-            Console.Write($"Введите номер {name} буквы ");
-            int NomerBukvu;
-            while (true)
-            {
-                if (!int.TryParse(Console.ReadLine(), out NomerBukvu))
-                    Console.Write($"Ошибка! Введите номер {name} буквы еще раз ");
-                else if (NomerBukvu <= 0 || NomerBukvu > slovostr.Length)
-                    Console.Write($"Номер буквы не может быть неположительным и больше кол-ва букв в слове ({slovostr.Length}).Введите номер {name} буквы еще раз ");
-                else
-                    break;
-            }
-            return NomerBukvu;
+            (SlovoSB[i], SlovoSB[SlovoSB.Length - 3 + i]) = (SlovoSB[SlovoSB.Length - 3 + i], SlovoSB[i]);
         }
-        string UdalenieNeskolkihBukv(int[] NomeraBukv)
+        Console.WriteLine("РР·РјРµРЅРµРЅРЅРѕРµ СЃР»РѕРІРѕ: " + SlovoSB);
+    }
+    void n3()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ. РћРїСЂРµРґРµР»РёС‚СЊ РґРѕР»СЋ (РІ %) Р±СѓРєРІ Р° РІ РЅРµРј");
+        Console.Write("Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ ");
+        while (ProverkaVvodaPredlosh()) ;
+        slovostr = slovostr.ToLower();
+        double countbukv = 0;
+        char bukva = 'Р°';
+        for (int i = 0; i < slovostr.Length; i++)
         {
-            string Slovo = string.Empty;
-            int hellp = 0;
-            for (int i = 0; i < NomeraBukv.Length; i++)
-            {
-                var help = slovostr.Substring(hellp, NomeraBukv[i] - hellp - 1);
-                // Console.WriteLine("help: " + help);
-                hellp = NomeraBukv[i];
-                Slovo += help;
-            }
-            Slovo += slovostr.Substring(hellp);
-            Slovo += new string('_', NomeraBukv.Length);
-            return Slovo;
+            if (slovostr[i] == bukva)
+                countbukv++;
         }
+        Console.WriteLine($"Р”РѕР»СЏ Р±СѓРєРІ {bukva} РІ РїСЂРѕС†РµРЅС‚Р°С…: " + countbukv / slovostr.Length * 100);
+    }
+    void n4()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ. РћРїСЂРµРґРµР»РёС‚СЊ РїРѕСЂСЏРґРєРѕРІС‹Рµ РЅРѕРјРµСЂР° РїРµСЂРІРѕР№ РїР°СЂС‹ РѕРґРёРЅР°РєРѕРІС‹С… СЃРѕСЃРµРґРЅРёС… СЃРёРјРІРѕР»РѕРІ. Р•СЃР»Рё С‚Р°РєРёС… СЃРёРјРІРѕР»РѕРІ РЅРµС‚, С‚Рѕ РІС‹РІРµСЃРё СЃРѕРѕС‚РµС‚СЃС‚РІСѓСЋС‰РµРµ СЃРѕРѕР±С‰РµРЅРёРµ");
+        Console.Write("Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ ");
+        while (ProverkaVvodaPredlosh()) ;
+        bool indekator = true;
+        for (int i = 0; i < slovostr.Length - 1; i++)
+        {
+            if (slovostr[i] == slovostr[i + 1])
+            {
+                Console.WriteLine("РќРѕРјРµСЂР° РїРµСЂРІС‹С… РѕРґРёРЅР°РєРѕРІС‹С… СЃРёРјРІРѕР»РѕРІ: " + (i + 1) + ", " + (i + 2));
+                indekator = false;
+                break;
+            }
+        }
+        if (indekator)
+            Console.WriteLine("Р’ РїСЂРµРґР»РѕР¶РµРЅРёРё РЅРµС‚ СЃРѕСЃРµРґРЅРёС… РѕРґРёРЅР°РєРѕРІС‹С… СЃРёРјРІРѕР»РѕРІ");
+    }
+    void n5()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ. Р’СЃРµ СЃРёРјРІРѕР»С‹ РЅР° РЅРµС‡РµС‚РЅС‹С… РјРµСЃС‚Р°С… РїРѕРјРµРЅСЏС‚СЊ РЅР° \"_\"");
+        Console.Write("Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ ");
+        while (ProverkaVvodaPredlosh()) ;
+        var Predlosh = new StringBuilder(slovostr);
+        for (int i = 0; i < Predlosh.Length; i += 2)
+        {
+            Predlosh[i] = '_';
+        }
+        Console.WriteLine("РР·РјРµРЅРµРЅРЅРѕРµ РїСЂРµРґР»РѕР¶РµРЅРёРµ: " + Predlosh);
+    }
+    void n6()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ. РЈРґР°Р»РёС‚СЊ РёР· РЅРµРіРѕ РІСЃРµ СЃРёРјРІРѕР»С‹ СЃ n1-РіРѕ РїРѕ n2-Р№");
+        Console.Write("Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ ");
+        while (ProverkaVvodaPredlosh()) ;
+        var N1 = ZaprosNomeraBukvu("n1");
+        var N2 = ZaprosNomeraBukvu("n2");
+        var NomeraBukv = new int[N2 - N1 + 1];
+        for (int i = 0; i < NomeraBukv.Length; i++)
+        {
+            NomeraBukv[i] = N1 + i;
+        }
+        Array.Sort(NomeraBukv);
+        Console.WriteLine("РР·РјРµРЅРµРЅРЅРѕРµ СЃР»РѕРІРѕ: " + UdalenieBukv(NomeraBukv));
+    }
+    void n7()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ, РѕРєР°РЅС‡РёРІР°СЋС‰РµРµСЃСЏ СЃРёРјРІРѕР»РѕРј В«_В». Р’СЃС‚Р°РІРёС‚СЊ Р·Р°РґР°РЅРЅСѓСЋ Р±СѓРєРІСѓ РїРµСЂРµРґ РїРѕСЃР»РµРґРЅРµР№ Р±СѓРєРІРѕР№ Рё.");
+        Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ, РєРѕС‚РѕСЂР°СЏ РѕРєР°РЅС‡РёРІР°РµС‚СЃСЏ \"_\" Рё РµСЃС‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅР° Р±СѓРєРІР° \"Рё\": ");
+        char bukva = 'Рё';
+        char sim = '_';
+        while (ProverkaVvodaPredlosh() || ProverkaNaBukvu(bukva) || ProverkaNaKonez(sim)) ;
+        Console.Write("Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР», РєРѕС‚РѕСЂС‹Р№ РЅРµРѕР±С…РѕРґРёРјРѕ РІСЃС‚Р°РІРёС‚СЊ ");
+        char SimS = VvodChara();
+        int IndexBukvu = Array.FindLastIndex(slovostr.ToCharArray(), d => d == bukva);
+        var Slovo = new StringBuilder(slovostr);
+        Slovo[Slovo.Length - 1] = SimS;
+        for (int i = Slovo.Length - 1; i > IndexBukvu; i--)
+        {
+            (Slovo[i], Slovo[i - 1]) = (Slovo[i - 1], Slovo[i]);
+        }
+        Console.WriteLine("РР·РјРµРЅРµРЅРЅРѕРµ СЃР»РѕРІРѕ: " + Slovo);
+    }
+    void n8()
+    {
+        Console.WriteLine("Р”Р°РЅ С‚РµРєСЃС‚. РќР°Р№С‚Рё СЃСѓРјРјСѓ РІСЃРµС… РёРјРµСЋС‰РёС…СЃСЏ РІ РЅРµРј С‡РёСЃРµР». РќР°Р№С‚Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Рё РјРёРЅРёРјР°Р»СЊРЅРѕРµ РёР· РёРјРµСЋС‰РёС…СЃСЏ РІ РЅРµРј С‡РёСЃРµР».");
+        Console.Write("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ ");
+        while (ProverkaVvodaPredlosh()) ;
+        var Slovo = new StringBuilder(slovostr);
+        var ChislaAsSB = new StringBuilder(" ");
+        for (int i = 0; i < Slovo.Length; i++)
+        {
+            if (IsZifra(Slovo[i]))
+                ChislaAsSB.Append(Slovo[i]);
+            else
+                ChislaAsSB.Append(' ');
+        }
+        var ChislaAsString = ChislaAsSB.ToString().Trim();
+        Console.WriteLine("ChislaAsString: " + ChislaAsString);
+        var ChislaAsMassiv = Array.ConvertAll(ChislaAsString.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+        Console.WriteLine("РЎСѓРјРјР° С‡РёСЃРµР»: " + ChislaAsMassiv.Sum() + "\nРњР°РєСЃРёРјР°Р»СЊРЅРѕРµ: " + ChislaAsMassiv.Max() + "\nРњРёРЅРёРјР°Р»СЊРЅРѕРµ: " + ChislaAsMassiv.Min());
+    }
+    void n9()
+    {
+        var Slovo1 = VvodSlov(1);
+        var Slovo2 = VvodSlov(2);
+        string VvodSlov(int nomerslova)
+        {
+            Console.Write($"Р’РІРµРґРёС‚Рµ {nomerslova}-Рµ СЃР»РѕРІРѕ ");
+            while (ProverkaVvodaSlova()) ;
+            return slovostr;
+        }
+        char[] Bukvu1 = Slovo1.ToCharArray();
+        bool indikator = true;
+        for (int i = 0; i < Slovo2.Length; i++)
+        {
+            if (ProverkaMassiva(Slovo2[i]))
+                indikator &= true;
+            else
+                indikator &= false;
+        }
+        if (!indikator)
+            Console.WriteLine("РќРµР»СЊР·СЏ");
+        else
+            Console.WriteLine("РњРѕР¶РЅРѕ");
+        bool ProverkaMassiva(char Bukva)
+        {
+            for (int i = 0; i < Bukvu1.Length; i++)
+            {
+                if (Bukva == Bukvu1[i])
+                {
+                    Bukvu1[i] = '@';
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    void n10()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ СЃР»РѕРІРѕ. РћРїСЂРµРґРµР»РёС‚СЊ СЃРєРѕР»СЊРєРѕ СЂР°Р·Р»РёС‡РЅС‹С… Р±СѓРєРІ РІ РЅРµРј ");
+        Console.Write("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ ");
+        while (ProverkaVvodaSlova()) ;
+        string UnikSlovo = string.Concat(slovostr.ToLower().Distinct());
+        Console.WriteLine("Р Р°Р·Р»РёС‡РЅС‹С… Р±СѓРєРІ: " + UnikSlovo.Length);
+    }
+    void n11()
+    {
+        Console.WriteLine("Р”Р°РЅРѕ РїСЂРµРґР»РѕР¶РµРЅРёРµ. РќР°РїРµС‡Р°С‚Р°С‚СЊ РІСЃРµ РµРіРѕ СЃР»РѕРІР° РІ РїРѕСЂСЏРґРєРµ РЅРµСѓР±С‹РІР°РЅРёСЏ РёС… РґР»РёРЅ.");
+        Console.Write("Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ ");
+        while (ProverkaVvodaPredlosh()) ;
+        var Slova = slovostr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        var DlinuSlov = new int[Slova.Length];
+        for (int i = 0; i < Slova.Length; i++)
+        {
+            //Slova[i] = VvodSlov(i + 1);
+            DlinuSlov[i] = Slova[i].Length;
+        }
+        for (int i = 0; i < Slova.Length; i++)
+        {
+            for (int j = i + 1; j < Slova.Length; j++)
+            {
+                if (DlinuSlov[i] < DlinuSlov[j])
+                {
+                    (DlinuSlov[i], DlinuSlov[j]) = (DlinuSlov[j], DlinuSlov[i]);
+                    (Slova[i], Slova[j]) = (Slova[j], Slova[i]);
+                }
+            }
+        }
+        Console.WriteLine("РЎР»РѕРІР° РІ РїРѕСЂСЏРґРєРµ РЅРµСѓР±С‹РІР°РЅРёСЏ: " + string.Join(", ", Slova));
+    }
+    //=======================
+    bool IsZifra(char simbol)
+    {
+        var Zifru = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        if (Array.Exists(Zifru, h => h == simbol))
+            return true;
+        else
+            return false;
+    }
+    char VvodChara()
+    {
+        char Vremynka;
+        while (true)
+        {
+            if (char.TryParse(Console.ReadLine(), out Vremynka))
+            {
+                return Vremynka;
+            }
+            else
+            {
+                Console.Write("РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР» РµС‰Рµ СЂР°Р· ");
+            }
+        }
+    }
+    bool ProverkaVvodaPredlosh()
+    {
+        slovostr = Console.ReadLine().Trim();
+        if (slovostr.Length == 0)
+        {
+            Console.Write("Р’ РїСЂРµРґР»РѕР¶РµРЅРёРё РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РјРёРЅРёРјСѓРј РѕРґРЅРѕ СЃР»РѕРІРѕ. Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ РµС‰Рµ СЂР°Р· ");
+            return true;
+        }
+        else
+            return false;
+    }
+    bool ProverkaVvodaSlova(int minbukv = 1)
+    {
+        slovostr = Console.ReadLine().Trim();
+        if (slovostr.Length < minbukv)
+        {
+            Console.Write($"РЎР»РѕРІРѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РјРёРЅРёРјСѓРј РёР· {minbukv} Р±СѓРєРІ. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
+            return true;
+        }
+        else if (slovostr.Split(new char[] { ' ' }).Length != 1)
+        {
+            Console.Write("Р’РІРµРґРµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЃРѕСЃС‚РѕРёС‚ РЅРµ РёР· РѕРґРЅРѕРіРѕ СЃР»РѕРІР°. Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РµС‰Рµ СЂР°Р· ");
+            return true;
+        }
+        else
+            return false;
+    }
+    bool ProverkaNaBukvu(char bukva)
+    {
+        if (Array.Exists(slovostr.ToCharArray(), h => h == bukva))
+            return false;
+        else
+        {
+            Console.Write($"Р’ РїСЂРµРґР»РѕР¶РµРЅРёРё РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅР° Р±СѓРєРІР° \"{bukva}\". Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ РµС‰Рµ СЂР°Р· ");
+            return true;
+        }
+    }
+    bool ProverkaNaKonez(char simb)
+    {
+        if (slovostr[slovostr.Length - 1] == simb)
+            return false;
+        else
+        {
+            Console.Write($"Р’ РєРѕРЅС†Рµ РїСЂРµРґР»РѕР¶РµРЅРёСЏ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СЃРёРјРІРѕР» \"{simb}\". Р’РІРµРґРёС‚Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ РµС‰Рµ СЂР°Р· ");
+            return true;
+        }
+    }
+    int ZaprosNomeraBukvu(string name)
+    {
+        Console.Write($"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ {name} Р±СѓРєРІС‹ ");
+        int NomerBukvu;
+        while (true)
+        {
+            if (!int.TryParse(Console.ReadLine(), out NomerBukvu))
+                Console.Write($"РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ {name} Р±СѓРєРІС‹ РµС‰Рµ СЂР°Р· ");
+            else if (NomerBukvu <= 0 || NomerBukvu > slovostr.Length)
+                Console.Write($"РќРѕРјРµСЂ Р±СѓРєРІС‹ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј Рё Р±РѕР»СЊС€Рµ РєРѕР»-РІР° Р±СѓРєРІ РІ СЃР»РѕРІРµ ({slovostr.Length}).Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ {name} Р±СѓРєРІС‹ РµС‰Рµ СЂР°Р· ");
+            else
+                break;
+        }
+        return NomerBukvu;
+    }
+    string UdalenieBukv(int[] NomeraBukv)
+    {
+        string Slovo = string.Empty;
+        int hellp = 0;
+        for (int i = 0; i < NomeraBukv.Length; i++)
+        {
+            var help = slovostr.Substring(hellp, NomeraBukv[i] - hellp - 1);
+            // Console.WriteLine("help: " + help);
+            hellp = NomeraBukv[i];
+            Slovo += help;
+        }
+        Slovo += slovostr.Substring(hellp);
+        Slovo += new string('_', NomeraBukv.Length);
+        return Slovo;
     }
 }
