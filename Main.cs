@@ -9,8 +9,9 @@ namespace Main
             //Zadaniy.For hgf = new Zadaniy.For(); hgf.TipoMain();  //тоже показать надо
             //Stroki.Simvol simvol = new Stroki.Simvol(); simvol.TipoMain(); //дз по 14 
             //Nadoelo nadoelo = new Nadoelo(); nadoelo.TipoMain(); //дз по 15 и по 26
+            //Rabota_So_Strokami rabota = new Rabota_So_Strokami(); rabota.TipoMain(); //дз по 11 (по возможности)
+            ProverochnayMetodu da = new ProverochnayMetodu(); da.TipoMain();
             //ZifravStroke zifravStroke = new ZifravStroke(); zifravStroke.TipoMain();
-            Rabota_So_Strokami rabota = new Rabota_So_Strokami(); rabota.TipoMain(); //дз по 11 (по возможности)
             //Metodu org = new Metodu(); org.Artem();
             Console.Write("Для завершения программы нажмите Enter"); 
             Console.ReadLine();
